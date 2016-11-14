@@ -17,7 +17,7 @@ import java.util.List;
 public class MiBaseDeDatos extends SQLiteOpenHelper {
     private static final int VERSION_BD = 1;
     private static final String NOMBRE_BD = "miBD.db";
-    private static final String TABLA_CATEGORIA = "CREATE TABLE IF NOT EXISTS categoria" + "(id_cat INTEGER, categoria TEXT)";
+    private static final String TABLA_CATEGORIA = "CREATE TABLE IF NOT EXISTS categoria" + "(id_cat INTEGER, categoria TEXT, id_img INTEGER)";
     private static final String TABLA_ENCUESTA=  "CREATE TABLE IF NOT EXISTS encuesta" + "(id_enc INTEGER, encuesta TEXT, id_cat INTEGER)";
     private static final String TABLA_PREGUNTA = "CREATE TABLE IF NOT EXISTS pregunta" + "(id_pre INTEGER, pregunta TEXT, id_enc INTEGER)";
     private static final String TABLA_RESPUESTA = "CREATE TABLE IF NOT EXISTS respuesta" + "(id_res INTEGER, respuesta TEXT, id_pre INTEGER)";
@@ -44,12 +44,13 @@ public class MiBaseDeDatos extends SQLiteOpenHelper {
     }
 
 
-    public void insertarCATEGORIA(int id_cat, String categoria) {
+    public void insertarCATEGORIA(int id_cat, String categoria, int id_img) {
         SQLiteDatabase db = getWritableDatabase();
         if(db != null){
             ContentValues valores = new ContentValues();
             valores.put("id_cat", id_cat);
             valores.put("categoria", categoria);
+            valores.put("id_img", id_img);
             db.insert("categoria", null, valores);
             db.close();
         }
@@ -99,13 +100,13 @@ public class MiBaseDeDatos extends SQLiteOpenHelper {
 
     public Categoria recuperarCATEGORIA(int id_cat) {
         SQLiteDatabase db = getReadableDatabase();
-        String[] valores_recuperar = {"id_cat", "categoria"};
+        String[] valores_recuperar = {"id_cat", "categoria", "id_img"};
         Cursor cursor = db.query("categoria", valores_recuperar, "id_cat=" + id_cat,
                 null, null, null, null, null);
         if(cursor != null) {
             cursor.moveToFirst();
         }
-        Categoria categoria = new Categoria(cursor.getInt(0),cursor.getString(1));
+        Categoria categoria = new Categoria(cursor.getInt(0),cursor.getString(1), cursor.getInt(2));
         db.close();
         cursor.close();
         return categoria;
@@ -156,11 +157,11 @@ public class MiBaseDeDatos extends SQLiteOpenHelper {
     public List<Categoria> recuperarCATEGORIAS() {
         SQLiteDatabase db = getReadableDatabase();
         List<Categoria> lista_categorias = new ArrayList<Categoria>();
-        String[] valores_recuperar = {"id_cat", "categoria"};
+        String[] valores_recuperar = {"id_cat", "categoria", "id_img"};
         Cursor cursor = db.query("categoria", valores_recuperar,null, null, null, null, null, null);
         cursor.moveToFirst();
         do {
-            Categoria categorias = new Categoria(cursor.getInt(0), cursor.getString(1));
+            Categoria categorias = new Categoria(cursor.getInt(0), cursor.getString(1), cursor.getInt(2));
             lista_categorias.add(categorias);
         } while (cursor.moveToNext());
         db.close();
@@ -240,7 +241,7 @@ public class MiBaseDeDatos extends SQLiteOpenHelper {
     public void borrarRESPUESTAS()
     {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.execSQL("DROP TABLE IF EXISTS respuestas");
+        db.execSQL("DROP TABLE IF EXISTS respuesta");
         onCreate(db);
         db.close();
     }

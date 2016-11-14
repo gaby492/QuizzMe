@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import android.support.v7.app.AppCompatActivity;
 
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.widget.GridView;
 import android.widget.TextView;
@@ -12,7 +13,9 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     //GridView categoriasGridView;
-    TextView textView;
+    //TextView textView;
+    private GridView gridView;
+    private CategoriaAdapter adaptador;
 
     @Override
     public void onProvideAssistData(Bundle data) {
@@ -24,15 +27,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textView=(TextView) findViewById(R.id.textView);
-
+        //textView=(TextView) findViewById(R.id.textView);
+        usarToolbar();
         MiBaseDeDatos MDB = new MiBaseDeDatos(getApplicationContext());
         // Escribimos 4 registros en nuestra tabla
         MDB.borrarCATEGORIAS();
-        MDB.insertarCATEGORIA(1,"Personajes");
-        MDB.insertarCATEGORIA(2,"YouTubers");
-        MDB.insertarCATEGORIA(3,"Amor");
-        MDB.insertarCATEGORIA(4,"Peliculas");
+        MDB.insertarCATEGORIA(1,"Personajes", R.drawable.personaje);
+        MDB.insertarCATEGORIA(2,"YouTubers", R.drawable.youtube);
+        MDB.insertarCATEGORIA(3,"Amor", R.drawable.heart);
 
         MDB.borrarENCUESTAS();
         MDB.insertarENCUESTA(1, "Princesas de Disney", 1);
@@ -81,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             encuestas[i] = MDB.recuperarENCUESTAS().get(i).getEncuesta();
             idsCat[i] = MDB.recuperarENCUESTAS().get(i).getId_cat();
             Log.i(""+idsEnc[i], encuestas[i]);
-            textView.setText(encuestas[i]);
+            //textView.setText(encuestas[i]);
         }
 
         int num3 = MDB.recuperarPREGUNTAS().size();
@@ -108,9 +110,15 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-
-
-
-
+        //usarToolbar();
+        gridView = (GridView) findViewById(R.id.grid);
+        adaptador = new CategoriaAdapter(this);
+        gridView.setAdapter(adaptador);
     }
+
+    private void usarToolbar() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+    }
+
 }

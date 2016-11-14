@@ -3,4 +3,12 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="darkPrimaryColor">#00695c</color>
+    <color name="primaryColor">#26a69a</color>
+    <color name="accentColor">#00BCD4</color>
+
+    <color name="backgroundColor">#ffffff</color>
+
+    <color name="background_footer">#ffffff</color>
 </resources>

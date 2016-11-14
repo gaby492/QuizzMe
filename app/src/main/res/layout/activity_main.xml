@@ -1,33 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:weightSum="1">
 
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/toolbar"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <GridView
-        android:id="@+id/categoriasGridVew"
-
-        android:columnWidth="200dp"
-        android:verticalSpacing="50dp"
-        android:horizontalSpacing="50dp"
-        android:stretchMode="columnWidth"
-        android:gravity="center"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:numColumns="2"
+        android:gravity="bottom"
+        android:weightSum="1"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:paddingTop="10dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="132dp"
-        android:layout_marginBottom="19dp"
-        android:id="@+id/textView" />
+        <TextView
+            android:text="Clasificación"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            android:layout_weight="0.32"
+            android:textAlignment="center"
+            android:textStyle="normal|bold"
+            android:textColor="#ffa000"
+            android:textSize="30sp"
+            android:background="#ffff" />
+
+        <GridView
+            android:id="@+id/grid"
+            android:layout_height="431dp"
+            android:columnWidth="120dp"
+            android:horizontalSpacing="20dp"
+            android:numColumns="auto_fit"
+            android:verticalSpacing="20dp"
+            android:gravity="center"
+            android:layout_width="350dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.29"
+            android:background="#ffff" />
+    </LinearLayout>
 
 </RelativeLayout>
-

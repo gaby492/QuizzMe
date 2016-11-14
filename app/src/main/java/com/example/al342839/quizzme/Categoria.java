@@ -7,12 +7,15 @@ package com.example.al342839.quizzme;
 public class Categoria {
     private int id;
     private String nombre;
+    //private int idDrawable;  ///agregar
+    //private String imageName;
+    private int idDrawable;
 
-
-    public Categoria(int id, String nombre){
-         this.id = id;
+    public Categoria(int id, String nombre, int idDrawable){
+        this.id = id;
         this.nombre = nombre;
-     }
+        this.idDrawable= idDrawable;
+    }
 
     public String getNombre() {
         return nombre;
@@ -23,10 +26,19 @@ public class Categoria {
     }
 
     public int getId() {
-        return id;
+        return nombre.hashCode();
     }
 
     public void setId(int id) {
         this.id = id;
     }
+
+    public int getIdDrawable(){
+        return idDrawable;
+    }
+
+    public void setIdDrawable(int idDrawable){
+        this.idDrawable=idDrawable;
+    }
+
 }
