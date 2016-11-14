@@ -29,14 +29,32 @@ public class MainActivity extends AppCompatActivity {
         MiBaseDeDatos MDB = new MiBaseDeDatos(getApplicationContext());
         // Escribimos 4 registros en nuestra tabla
         MDB.borrarCATEGORIAS();
-        MDB.insertarCATEGORIA("Personajes");
-        MDB.insertarCATEGORIA("YouTubers");
-        MDB.insertarCATEGORIA("Amor");
-        MDB.insertarCATEGORIA("Peliculas");
+        MDB.insertarCATEGORIA(1,"Personajes");
+        MDB.insertarCATEGORIA(2,"YouTubers");
+        MDB.insertarCATEGORIA(3,"Amor");
+        MDB.insertarCATEGORIA(4,"Peliculas");
 
         MDB.borrarENCUESTAS();
         MDB.insertarENCUESTA(1, "Princesas de Disney", 1);
         MDB.insertarENCUESTA(2, "Príncipes de Disney", 1);
+
+        MDB.borrarPREGUNTAS();
+        MDB.insertarPREGUNTA(1, "¿Dónde preferirías vivir?", 1);
+        MDB.insertarPREGUNTA(2, "¿Cómo es tu personalidad?", 1);
+        MDB.insertarPREGUNTA(3, "¿Cuál es tu estilo al vestir?", 2);
+        MDB.insertarPREGUNTA(4, "¿Cómo sería tu chica ideal?", 2);
+
+        MDB.borrarPREGUNTAS();
+        MDB.insertarPREGUNTA(1, "¿Dónde preferirías vivir?", 1);
+        MDB.insertarPREGUNTA(2, "¿Cómo es tu personalidad?", 1);
+        MDB.insertarPREGUNTA(3, "¿Cuál es tu estilo al vestir?", 2);
+        MDB.insertarPREGUNTA(4, "¿Cómo sería tu chica ideal?", 2);
+
+        MDB.borrarRESPUESTAS();
+        MDB.insertarRESPUESTA(1, "Mansión", 1);
+        MDB.insertarRESPUESTA(2, "Ruda", 2);
+        MDB.insertarRESPUESTA(3, "Colorida", 3);
+        MDB.insertarRESPUESTA(4, "Con bonita personalidad", 4);
 
         // Recuperamos los 4 registros y los mostramos en el log
         int num = MDB.recuperarCATEGORIAS().size();
@@ -66,30 +84,30 @@ public class MainActivity extends AppCompatActivity {
             textView.setText(encuestas[i]);
         }
 
+        int num3 = MDB.recuperarPREGUNTAS().size();
 
+        Log.d("TOTAL", Integer.toString(num3));
+        int[] idsPre = new int[num3];
+        String[]preguntas = new String[num3];
+        for (int i = 0; i < num3; i++) {
+            idsPre[i] = MDB.recuperarPREGUNTAS().get(i).getId_pre();
+            preguntas[i] = MDB.recuperarPREGUNTAS().get(i).getPregunta();
+            Log.i(""+idsPre[i], preguntas[i]);
 
+        }
 
-        /*categoriasGridView = (GridView) findViewById(R.id.categoriasGridVew);
+        int num4 = MDB.recuperarRESPUESTAS().size();
 
-        ListAdapter myImageAdapter = new ImageAdapter(this, R.layout.categoria_layout, categorias);
-        categoriasGridView.setAdapter(myImageAdapter);
+        Log.d("TOTAL", Integer.toString(num4));
+        int[] idsRes = new int[num4];
+        String[]respuestas = new String[num4];
+        for (int i = 0; i < num4; i++) {
+            idsRes[i] = MDB.recuperarRESPUESTAS().get(i).getId_res();
+            respuestas[i] = MDB.recuperarRESPUESTAS().get(i).getRespuesta();
+            Log.i(""+idsRes[i], respuestas[i]);
 
+        }
 
-
-        categoriasGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                String peli = categoriasGridView.getItemAtPosition(position).toString();
-                Toast.makeText(getApplicationContext(),"Click en registro " + peli, Toast.LENGTH_SHORT).show();
-
-                Intent i = new Intent(MainActivity.this,ImagenPelicula.class);
-                i.putExtra("peli",peli);
-                startActivity(i);
-
-
-            }
-        });*/
 
 
 
