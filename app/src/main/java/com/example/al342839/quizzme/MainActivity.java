@@ -29,10 +29,10 @@ public class MainActivity extends AppCompatActivity {
         MiBaseDeDatos MDB = new MiBaseDeDatos(getApplicationContext());
         // Escribimos 4 registros en nuestra tabla
         MDB.borrarCATEGORIAS();
-        MDB.insertarCATEGORIA("Personajes");
-        MDB.insertarCATEGORIA("YouTubers");
-        MDB.insertarCATEGORIA("Amor");
-        MDB.insertarCATEGORIA("Peliculas");
+        MDB.insertarCATEGORIA(1,"Personajes");
+        MDB.insertarCATEGORIA(2,"YouTubers");
+        MDB.insertarCATEGORIA(3,"Amor");
+        MDB.insertarCATEGORIA(4,"Peliculas");
 
         MDB.borrarENCUESTAS();
         MDB.insertarENCUESTA(1, "Princesas de Disney", 1);
@@ -43,6 +43,18 @@ public class MainActivity extends AppCompatActivity {
         MDB.insertarPREGUNTA(2, "¿Cómo es tu personalidad?", 1);
         MDB.insertarPREGUNTA(3, "¿Cuál es tu estilo al vestir?", 2);
         MDB.insertarPREGUNTA(4, "¿Cómo sería tu chica ideal?", 2);
+
+        MDB.borrarPREGUNTAS();
+        MDB.insertarPREGUNTA(1, "¿Dónde preferirías vivir?", 1);
+        MDB.insertarPREGUNTA(2, "¿Cómo es tu personalidad?", 1);
+        MDB.insertarPREGUNTA(3, "¿Cuál es tu estilo al vestir?", 2);
+        MDB.insertarPREGUNTA(4, "¿Cómo sería tu chica ideal?", 2);
+
+        MDB.borrarRESPUESTAS();
+        MDB.insertarRESPUESTA(1, "Mansión", 1);
+        MDB.insertarRESPUESTA(2, "Ruda", 2);
+        MDB.insertarRESPUESTA(3, "Colorida", 3);
+        MDB.insertarRESPUESTA(4, "Con bonita personalidad", 4);
 
         // Recuperamos los 4 registros y los mostramos en el log
         int num = MDB.recuperarCATEGORIAS().size();
@@ -81,6 +93,18 @@ public class MainActivity extends AppCompatActivity {
             idsPre[i] = MDB.recuperarPREGUNTAS().get(i).getId_pre();
             preguntas[i] = MDB.recuperarPREGUNTAS().get(i).getPregunta();
             Log.i(""+idsPre[i], preguntas[i]);
+
+        }
+
+        int num4 = MDB.recuperarRESPUESTAS().size();
+
+        Log.d("TOTAL", Integer.toString(num4));
+        int[] idsRes = new int[num4];
+        String[]respuestas = new String[num4];
+        for (int i = 0; i < num4; i++) {
+            idsRes[i] = MDB.recuperarRESPUESTAS().get(i).getId_res();
+            respuestas[i] = MDB.recuperarRESPUESTAS().get(i).getRespuesta();
+            Log.i(""+idsRes[i], respuestas[i]);
 
         }
 
