@@ -1,13 +1,17 @@
 package com.example.al342839.quizzme;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.support.v7.app.AppCompatActivity;
 
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -72,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         int num2 = MDB.recuperarENCUESTAS().size();
-        //textView.setText(num2);
 
         Log.d("TOTAL", Integer.toString(num2));
         int[] idsEnc = new int[num2];
@@ -83,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
             encuestas[i] = MDB.recuperarENCUESTAS().get(i).getEncuesta();
             idsCat[i] = MDB.recuperarENCUESTAS().get(i).getId_cat();
             Log.i(""+idsEnc[i], encuestas[i]);
-            //textView.setText(encuestas[i]);
+
         }
 
         int num3 = MDB.recuperarPREGUNTAS().size();
@@ -110,10 +113,19 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        //usarToolbar();
         gridView = (GridView) findViewById(R.id.grid);
         adaptador = new CategoriaAdapter(this);
         gridView.setAdapter(adaptador);
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Toast.makeText(getApplicationContext(), "Click en registro " +  position, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, ListaEncuestasActivity.class);
+                intent.putExtra("idCategoria", position + "");
+                startActivity(intent);
+            }
+        });
     }
 
     private void usarToolbar() {

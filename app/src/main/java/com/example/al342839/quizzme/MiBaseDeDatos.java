@@ -184,6 +184,21 @@ public class MiBaseDeDatos extends SQLiteOpenHelper {
         return lista_encuestas;
     }
 
+    public List<Encuesta> recuperarENCUESTAS(int id) {
+        SQLiteDatabase db = getReadableDatabase();
+        List<Encuesta> lista_encuestas = new ArrayList<Encuesta>();
+        String[] valores_recuperar = {"id_enc", "encuesta", "id_cat"};
+        Cursor cursor = db.query("encuesta", valores_recuperar,"id_enc=" + id, null, null, null, null, null);
+        cursor.moveToFirst();
+        do {
+            Encuesta encuesta = new Encuesta(cursor.getInt(0), cursor.getString(1), cursor.getInt(2));
+            lista_encuestas.add(encuesta);
+        } while (cursor.moveToNext());
+        db.close();
+        cursor.close();
+        return lista_encuestas;
+    }
+
     public List<Pregunta> recuperarPREGUNTAS() {
         SQLiteDatabase db = getReadableDatabase();
         ArrayList<Pregunta> lista_preguntas = new ArrayList<Pregunta>();

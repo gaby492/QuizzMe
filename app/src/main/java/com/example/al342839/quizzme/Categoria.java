@@ -7,8 +7,6 @@ package com.example.al342839.quizzme;
 public class Categoria {
     private int id;
     private String nombre;
-    //private int idDrawable;  ///agregar
-    //private String imageName;
     private int idDrawable;
 
     public Categoria(int id, String nombre, int idDrawable){

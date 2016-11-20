@@ -34,7 +34,7 @@ public class CategoriaAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return ITEMS.size();  /// return Categoria.ITEMS.length;
+        return ITEMS.size();
     }
 
     @Override
@@ -60,12 +60,9 @@ public class CategoriaAdapter extends BaseAdapter {
         TextView nombreCategoria = (TextView) view.findViewById(R.id.nombre_categoria);
 
         final Categoria item = getItem(position);
-        /*Glide.with(imagenCategoria.getContext())
-                .load(item.getIdDrawable())
-                .into(imagenCategoria);*/
-        //imagenCategoria.setImageDrawable(ContextCompat.getDrawable(context,item.getIdDrawable()));
+
         imagenCategoria.setImageResource(item.getIdDrawable());
-        nombreCategoria.setText(item.getNombre()); ///getNombre()
+        nombreCategoria.setText(item.getNombre());
         Log.i("IDS", item.getIdDrawable() +"" );
 
         return view;
