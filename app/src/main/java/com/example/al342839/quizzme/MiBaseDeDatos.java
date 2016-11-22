@@ -21,6 +21,7 @@ public class MiBaseDeDatos extends SQLiteOpenHelper {
     private static final String TABLA_ENCUESTA=  "CREATE TABLE IF NOT EXISTS encuesta" + "(id_enc INTEGER, encuesta TEXT, id_cat INTEGER)";
     private static final String TABLA_PREGUNTA = "CREATE TABLE IF NOT EXISTS pregunta" + "(id_pre INTEGER, pregunta TEXT, id_enc INTEGER)";
     private static final String TABLA_RESPUESTA = "CREATE TABLE IF NOT EXISTS respuesta" + "(id_res INTEGER, respuesta TEXT, id_pre INTEGER)";
+    private static final String TABLA_RESULTADO = "CREATE TABLE IF NOT EXISTS resultado" + "(id_resu INTEGER, resultado TEXT, id_enc INTEGER)";
     public MiBaseDeDatos(Context context) {
         super(context, NOMBRE_BD, null, VERSION_BD);
     }
@@ -31,6 +32,7 @@ public class MiBaseDeDatos extends SQLiteOpenHelper {
         db.execSQL(TABLA_ENCUESTA);
         db.execSQL(TABLA_PREGUNTA);
         db.execSQL(TABLA_RESPUESTA);
+        db.execSQL(TABLA_RESULTADO);
         Log.i("APP BD", "La Base de Datos y las Tablas han sido creadas!");
     }
 
@@ -40,6 +42,7 @@ public class MiBaseDeDatos extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS encuesta");
         db.execSQL("DROP TABLE IF EXISTS pregunta");
         db.execSQL("DROP TABLE IF EXISTS respuesta");
+        db.execSQL("DROP TABLE IF EXISTS resultado");
         onCreate(db);
     }
 
@@ -91,6 +94,20 @@ public class MiBaseDeDatos extends SQLiteOpenHelper {
             valores.put("id_res", id_res);
             valores.put("respuesta", respuesta);
             valores.put("id_pre", id_pre);
+
+            db.insert("respuesta", null, valores);
+
+            db.close();
+        }
+    }
+
+    public void insertarRESULTADO(int id_resu, String resultado, int id_enc) {
+        SQLiteDatabase db = getWritableDatabase();
+        if(db != null){
+            ContentValues valores = new ContentValues();
+            valores.put("id_res", id_resu);
+            valores.put("respuesta", resultado);
+            valores.put("id_pre", id_enc);
 
             db.insert("respuesta", null, valores);
 
@@ -188,7 +205,7 @@ public class MiBaseDeDatos extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
         List<Encuesta> lista_encuestas = new ArrayList<Encuesta>();
         String[] valores_recuperar = {"id_enc", "encuesta", "id_cat"};
-        Cursor cursor = db.query("encuesta", valores_recuperar,"id_enc=" + id, null, null, null, null, null);
+        Cursor cursor = db.query("encuesta", valores_recuperar,"id_cat=" + id, null, null, null, null, null);
         cursor.moveToFirst();
         do {
             Encuesta encuesta = new Encuesta(cursor.getInt(0), cursor.getString(1), cursor.getInt(2));
@@ -229,6 +246,21 @@ public class MiBaseDeDatos extends SQLiteOpenHelper {
         return lista_respuestas;
     }
 
+    public List<Resultado> recuperarRESULTADOS() {
+        SQLiteDatabase db = getReadableDatabase();
+        ArrayList<Resultado> lista_resultados = new ArrayList<Resultado>();
+        String[] valores_recuperar = {"id_resu", "resultado", "id_enc"};
+        Cursor cursor = db.query("resultado", valores_recuperar,null, null, null, null, null, null);
+        cursor.moveToFirst();
+        do {
+            Resultado resultado = new Resultado(cursor.getInt(0), cursor.getString(1), cursor.getInt(2));
+            lista_resultados.add(resultado);
+        } while (cursor.moveToNext());
+        db.close();
+        cursor.close();
+        return lista_resultados;
+    }
+
     public void borrarCATEGORIAS()
     {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -259,5 +291,44 @@ public class MiBaseDeDatos extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS respuesta");
         onCreate(db);
         db.close();
+    }
+
+    public void borrarRESULTADOS()
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DROP TABLE IF EXISTS resultado");
+        onCreate(db);
+        db.close();
+    }
+
+    public List<Pregunta> recuperarPREGUNTAS_DE_ENC(int id_enc) {
+        SQLiteDatabase db = getReadableDatabase();
+        ArrayList<Pregunta> lista_preguntas = new ArrayList<Pregunta>();
+        String[] valores_recuperar = {"id_pre", "pregunta", "id_enc"};
+        Cursor cursor = db.query("pregunta", valores_recuperar,"id_enc="+id_enc, null, null, null, null, null);
+        cursor.moveToFirst();
+        do {
+            Pregunta pregunta = new Pregunta(cursor.getInt(0), cursor.getString(1), cursor.getInt(2));
+            lista_preguntas.add(pregunta);
+        } while (cursor.moveToNext());
+        db.close();
+        cursor.close();
+        return lista_preguntas;
+    }
+
+
+    public List<Respuesta> recuperarRESPUESTAS_DE_PRE(int id_pre) {
+        SQLiteDatabase db = getReadableDatabase();
+        ArrayList<Respuesta> lista_respuestas = new ArrayList<Respuesta>();
+        String[] valores_recuperar = {"id_res", "respuesta", "id_pre"};
+        Cursor cursor = db.query("respuesta", valores_recuperar,"id_pre="+id_pre, null, null, null, null, null);
+        cursor.moveToFirst();
+        do {
+            Respuesta respuesta = new Respuesta(cursor.getInt(0), cursor.getString(1), cursor.getInt(2));
+            lista_respuestas.add(respuesta);
+        } while (cursor.moveToNext());
+        db.close();
+        cursor.close();
+        return lista_respuestas;
     }
 }

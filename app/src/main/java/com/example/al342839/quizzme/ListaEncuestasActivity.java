@@ -4,17 +4,21 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
 public class ListaEncuestasActivity extends AppCompatActivity {
     TextView encabezado;
     ImageView imgEncabezado;
+    List<Encuesta> encuestas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,8 +27,6 @@ public class ListaEncuestasActivity extends AppCompatActivity {
         imgEncabezado=(ImageView) findViewById(R.id.imageView2);
         usarToolbar();
         MiBaseDeDatos MDB = new MiBaseDeDatos(getApplicationContext());
-
-        List<Encuesta> encuestas;
 
         Intent intent= getIntent();
         Bundle b=  intent.getExtras();
@@ -41,12 +43,19 @@ public class ListaEncuestasActivity extends AppCompatActivity {
 
         encuestas=MDB.recuperarENCUESTAS(idCategoria);
         ListView encuestasListView=(ListView) findViewById(R.id.listView);
-
-        ArrayAdapter<Encuesta> myAdapter = new ArrayAdapter<Encuesta>(getApplicationContext(),
-                android.R.layout.simple_list_item_1, android.R.id.text1, encuestas);
-
         ListAdapter myCustomAdapter= new ListaEncuestaCustomAdapter(this,R.layout.encuestas, encuestas);
         encuestasListView.setAdapter(myCustomAdapter);
+
+        encuestasListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getApplicationContext(), "Click en registro " +  position, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(ListaEncuestasActivity.this, Test.class);
+                intent.putExtra("id_enc", position + "");
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void usarToolbar() {

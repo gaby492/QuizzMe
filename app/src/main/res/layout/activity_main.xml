@@ -36,17 +36,18 @@
             android:textSize="30sp"
             android:background="#ffff" />
 
-        <GridView
-            android:id="@+id/grid"
-            android:layout_height="430dp"
-            android:columnWidth="120dp"
-            android:horizontalSpacing="20dp"
-            android:numColumns="auto_fit"
-            android:verticalSpacing="20dp"
-            android:gravity="center"
-            android:layout_width="350dp"
-            android:layout_gravity="center"
-            android:background="#ffff" />
-    </LinearLayout>
 
+        <GridView
+        android:id="@+id/grid"
+        android:layout_height="430dp"
+        android:columnWidth="120dp"
+        android:horizontalSpacing="20dp"
+        android:numColumns="auto_fit"
+        android:verticalSpacing="20dp"
+        android:gravity="center"
+        android:layout_width="350dp"
+        android:layout_gravity="center"
+        android:background="#ffff" />
+</LinearLayout>
 </RelativeLayout>
+
