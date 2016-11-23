@@ -126,28 +126,67 @@ public class MainActivity extends AppCompatActivity {
         MDB.insertarCATEGORIA(3,"Amor", R.drawable.heart);
         /////////////////////////////////////////////////////////////////////////////////////////////
         MDB.borrarENCUESTAS();
-        MDB.insertarENCUESTA(1, "Princesas de Disney", 1);
-        MDB.insertarENCUESTA(2, "Príncipes de Disney", 1);
+            MDB.insertarENCUESTA(1, "¿Que Princesa de Disney eres?", 1);
+        MDB.insertarENCUESTA(2, "¿Que Principe de Disney eres?", 1);
         /////////////////////////////////////////////////////////////////////////////////////////////
         MDB.borrarPREGUNTAS();
         MDB.insertarPREGUNTA(1, "¿Dónde preferirías vivir?", 1);
         MDB.insertarPREGUNTA(2, "¿Cómo es tu personalidad?", 1);
-        MDB.insertarPREGUNTA(3, "¿Cuál es tu estilo al vestir?", 2);
-        MDB.insertarPREGUNTA(4, "¿Cómo sería tu chica ideal?", 2);
+        MDB.insertarPREGUNTA(3, "¿Cual es tu mejor habilidad?", 1);
+        MDB.insertarPREGUNTA(4, "¿Que color usas mas al vestir?", 1);
+        MDB.insertarPREGUNTA(5, "¿Que mascota prefieres?", 1);
+        MDB.insertarPREGUNTA(6, "¿Como prefieres pasar tu tiempo libre?", 1);
+        MDB.insertarPREGUNTA(7, "¿Que lugar te gusta mas?", 1);
+        MDB.insertarPREGUNTA(8, "¿Cuál es tu estilo al vestir?", 2);
+        MDB.insertarPREGUNTA(9, "¿Cómo sería tu chica ideal?", 2);
+        MDB.insertarPREGUNTA(10, "¿Cuál es tu estilo al vestir?", 2);
+        MDB.insertarPREGUNTA(11, "¿Cuál es tu estilo al vestir?", 2);
+        MDB.insertarPREGUNTA(12, "¿Cuál es tu estilo al vestir?", 2);
+        MDB.insertarPREGUNTA(13, "¿Cuál es tu estilo al vestir?", 2);
+        MDB.insertarPREGUNTA(14, "¿Cuál es tu estilo al vestir?", 2);
         /////////////////////////////////////////////////////////////////////////////////////////////
         MDB.borrarRESPUESTAS();
-        MDB.insertarRESPUESTA(1, "Mansión", 1);
-        MDB.insertarRESPUESTA(2, "Casa", 1);
-        MDB.insertarRESPUESTA(3, "Departamento", 1);
-        MDB.insertarRESPUESTA(4, "Hotel", 1);
+        MDB.insertarRESPUESTA(1, "Casa en la playa", 1);
+        MDB.insertarRESPUESTA(2, "Castillo", 1);
+        MDB.insertarRESPUESTA(3, "Mansion", 1);
+        MDB.insertarRESPUESTA(4, "Casa sencilla", 1);
 
-        MDB.insertarRESPUESTA(5, "Ruda", 2);
-        MDB.insertarRESPUESTA(6, "Timida", 2);
-        MDB.insertarRESPUESTA(7, "Alegre", 2);
-        MDB.insertarRESPUESTA(8, "Traviesa", 2);
+        MDB.insertarRESPUESTA(5, "Risueña", 2);
+        MDB.insertarRESPUESTA(6, "Alegre", 2);
+        MDB.insertarRESPUESTA(7, "Trabajadora", 2);
+        MDB.insertarRESPUESTA(8, "Perseverante", 2);
 
-        MDB.insertarRESPUESTA(9, "Colorida", 3);
-        MDB.insertarRESPUESTA(10, "Con bonita personalidad", 4);
+        MDB.insertarRESPUESTA(9, "Nadar", 3);
+        MDB.insertarRESPUESTA(10, "Cocinar", 3);
+        MDB.insertarRESPUESTA(11, "Leer", 3);
+        MDB.insertarRESPUESTA(12, "Cocer", 3);
+
+        MDB.insertarRESPUESTA(13, "Verde", 4);
+        MDB.insertarRESPUESTA(14, "Azul", 4);
+        MDB.insertarRESPUESTA(15, "Amarillo", 4);
+        MDB.insertarRESPUESTA(16, "Rosa", 4);
+
+        MDB.insertarRESPUESTA(17, "Pez", 5);
+        MDB.insertarRESPUESTA(18, "Raton", 5);
+        MDB.insertarRESPUESTA(19, "Perro", 5);
+        MDB.insertarRESPUESTA(20, "Ave", 5);
+
+        MDB.insertarRESPUESTA(21, "Cantando", 6);
+        MDB.insertarRESPUESTA(22, "Limpiando", 6);
+        MDB.insertarRESPUESTA(23, "Escribiendo", 6);
+        MDB.insertarRESPUESTA(24, "Caminando", 6);
+
+        MDB.insertarRESPUESTA(25, "La Playa", 7);
+        MDB.insertarRESPUESTA(26, "El Parque", 7);
+        MDB.insertarRESPUESTA(27, "Las Montañas", 7);
+        MDB.insertarRESPUESTA(28, "El bosque", 7);
+
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        MDB.borrarRESULTADOS();
+        MDB.insertarRESULTADO(1,"Ariel","Eres linda, agradable y con un gran talento.", 1, R.drawable.ariel);
+        MDB.insertarRESULTADO(2,"Cenicienta","Eres trabajadora, amable y hermosa.", 1, R.drawable.cenicienta);
+        MDB.insertarRESULTADO(3,"Bella","Eres inteligente, hermosa y culta.", 1, R.drawable.bellabestia);
+        MDB.insertarRESULTADO(4,"Aurora","Eres curiosa, lista, dormilona y muy hermosa.", 1, R.drawable.aurora);
     }
 
 }

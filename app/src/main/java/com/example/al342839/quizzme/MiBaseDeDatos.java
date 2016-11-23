@@ -21,7 +21,7 @@ public class MiBaseDeDatos extends SQLiteOpenHelper {
     private static final String TABLA_ENCUESTA=  "CREATE TABLE IF NOT EXISTS encuesta" + "(id_enc INTEGER, encuesta TEXT, id_cat INTEGER)";
     private static final String TABLA_PREGUNTA = "CREATE TABLE IF NOT EXISTS pregunta" + "(id_pre INTEGER, pregunta TEXT, id_enc INTEGER)";
     private static final String TABLA_RESPUESTA = "CREATE TABLE IF NOT EXISTS respuesta" + "(id_res INTEGER, respuesta TEXT, id_pre INTEGER)";
-    private static final String TABLA_RESULTADO = "CREATE TABLE IF NOT EXISTS resultado" + "(id_resu INTEGER, resultado TEXT, id_enc INTEGER)";
+    private static final String TABLA_RESULTADO = "CREATE TABLE IF NOT EXISTS resultado" + "(id_resu INTEGER, resultado TEXT, descripcion TEXT, id_enc INTEGER, imagen INTEGER)";
     public MiBaseDeDatos(Context context) {
         super(context, NOMBRE_BD, null, VERSION_BD);
     }
@@ -101,15 +101,17 @@ public class MiBaseDeDatos extends SQLiteOpenHelper {
         }
     }
 
-    public void insertarRESULTADO(int id_resu, String resultado, int id_enc) {
+    public void insertarRESULTADO(int id_resu, String resultado, String descripcion, int id_enc, int imagen) {
         SQLiteDatabase db = getWritableDatabase();
         if(db != null){
             ContentValues valores = new ContentValues();
-            valores.put("id_res", id_resu);
-            valores.put("respuesta", resultado);
-            valores.put("id_pre", id_enc);
+            valores.put("id_resu", id_resu);
+            valores.put("resultado", resultado);
+            valores.put("descripcion", descripcion);
+            valores.put("id_enc", id_enc);
+            valores.put("imagen", imagen);
 
-            db.insert("respuesta", null, valores);
+            db.insert("resultado", null, valores);
 
             db.close();
         }
@@ -169,6 +171,19 @@ public class MiBaseDeDatos extends SQLiteOpenHelper {
         db.close();
         cursor.close();
         return respuesta;
+    }
+
+    public Resultado recuperarRESULTADO(int id_resu, int id_enc) {
+        SQLiteDatabase db = getReadableDatabase();
+        String[] valores_recuperar = {"id_resu", "resultado","descripcion", "id_enc", "imagen"};
+        Cursor cursor = db.query("resultado", valores_recuperar, "id_resu=" + id_resu+" and id_enc="+id_enc,null,null, null, null, null);
+        if(cursor != null) {
+            cursor.moveToFirst();
+        }
+        Resultado resultado = new Resultado(cursor.getInt(0),cursor.getString(1),cursor.getString(2), cursor.getInt(3), cursor.getInt(4));
+        db.close();
+        cursor.close();
+        return resultado;
     }
 
     public List<Categoria> recuperarCATEGORIAS() {
@@ -249,11 +264,11 @@ public class MiBaseDeDatos extends SQLiteOpenHelper {
     public List<Resultado> recuperarRESULTADOS() {
         SQLiteDatabase db = getReadableDatabase();
         ArrayList<Resultado> lista_resultados = new ArrayList<Resultado>();
-        String[] valores_recuperar = {"id_resu", "resultado", "id_enc"};
+        String[] valores_recuperar = {"id_resu", "resultado","descripcion", "id_enc", "imagen"};
         Cursor cursor = db.query("resultado", valores_recuperar,null, null, null, null, null, null);
         cursor.moveToFirst();
         do {
-            Resultado resultado = new Resultado(cursor.getInt(0), cursor.getString(1), cursor.getInt(2));
+            Resultado resultado = new Resultado(cursor.getInt(0), cursor.getString(1),cursor.getString(2), cursor.getInt(3), cursor.getInt(4));
             lista_resultados.add(resultado);
         } while (cursor.moveToNext());
         db.close();
@@ -331,4 +346,5 @@ public class MiBaseDeDatos extends SQLiteOpenHelper {
         cursor.close();
         return lista_respuestas;
     }
+
 }
