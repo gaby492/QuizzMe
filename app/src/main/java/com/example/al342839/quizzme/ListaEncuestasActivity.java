@@ -19,6 +19,7 @@ public class ListaEncuestasActivity extends AppCompatActivity {
     TextView encabezado;
     ImageView imgEncabezado;
     List<Encuesta> encuestas;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,10 +50,13 @@ public class ListaEncuestasActivity extends AppCompatActivity {
         encuestasListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), "Click en registro " +  position, Toast.LENGTH_SHORT).show();
+                TextView v = (TextView) view.findViewById(R.id.textView2);
+
+                Toast.makeText(getApplicationContext(), "Click en registro " +  v.getText(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(ListaEncuestasActivity.this, Test.class);
-                intent.putExtra("id_enc", position + "");
+                intent.putExtra("pregunta", v.getText() + "");
                 startActivity(intent);
+
             }
         });
 

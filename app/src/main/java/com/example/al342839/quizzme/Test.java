@@ -18,6 +18,7 @@ public class Test extends AppCompatActivity {
     Button[] opciones;
     MiBaseDeDatos MBD;
     int id_enc;
+    String preguntaID;
     int k;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +26,8 @@ public class Test extends AppCompatActivity {
         setContentView(R.layout.activity_test);
         MBD = new MiBaseDeDatos(getApplicationContext());
         Intent i = getIntent();
-        id_enc = Integer.parseInt(i.getStringExtra("id_enc")) + 1;
+        preguntaID = i.getStringExtra("pregunta");
+        id_enc = MBD.recuperarENCUESTA_ID(preguntaID).getId_enc();
 
         preguntas = MBD.recuperarPREGUNTAS_DE_ENC(id_enc);
         PreActual = preguntas.get(numPre);

@@ -145,6 +145,20 @@ public class MiBaseDeDatos extends SQLiteOpenHelper {
         return encuesta;
     }
 
+    public Encuesta recuperarENCUESTA_ID(String encuestaid) {
+        SQLiteDatabase db = getReadableDatabase();
+        String[] valores_recuperar = {"id_enc", "encuesta", "id_cat"};
+        Cursor cursor = db.query("encuesta", valores_recuperar, "encuesta = '" + encuestaid+ "'",
+                null, null, null, null, null);
+        if(cursor != null) {
+            cursor.moveToFirst();
+        }
+        Encuesta encuesta = new Encuesta(cursor.getInt(0),cursor.getString(1), cursor.getInt(2));
+        db.close();
+        cursor.close();
+        return encuesta;
+    }
+
     public Pregunta recuperarPREGUNTA(int id_pre) {
         SQLiteDatabase db = getReadableDatabase();
         String[] valores_recuperar = {"id_pre", "pregunta", "id_enc"};

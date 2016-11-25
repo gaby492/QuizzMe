@@ -104,8 +104,6 @@ public class MainActivity extends AppCompatActivity {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                Toast.makeText(getApplicationContext(), "Click en registro " +  position, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(MainActivity.this, ListaEncuestasActivity.class);
                 intent.putExtra("idCategoria", position + "");
                 startActivity(intent);
@@ -122,28 +120,62 @@ public class MainActivity extends AppCompatActivity {
     {
         MDB.borrarCATEGORIAS();
         MDB.insertarCATEGORIA(1,"Personajes", R.drawable.personaje);
-        MDB.insertarCATEGORIA(2,"YouTubers", R.drawable.youtube);
-        MDB.insertarCATEGORIA(3,"Amor", R.drawable.heart);
+        MDB.insertarCATEGORIA(2,"YouTubers", R.drawable.youtubers);
+        MDB.insertarCATEGORIA(3,"Amor", R.drawable.love);
+        MDB.insertarCATEGORIA(4,"Cantantes", R.drawable.cantantes);
+        MDB.insertarCATEGORIA(5,"Comida", R.drawable.comida);
+        MDB.insertarCATEGORIA(6,"Personalidad", R.drawable.personalidad);
+        MDB.insertarCATEGORIA(7,"Salud", R.drawable.salud);
         /////////////////////////////////////////////////////////////////////////////////////////////
         MDB.borrarENCUESTAS();
-            MDB.insertarENCUESTA(1, "¿Que Princesa de Disney eres?", 1);
-        MDB.insertarENCUESTA(2, "¿Que Principe de Disney eres?", 1);
+        MDB.insertarENCUESTA(1, "¿Que Princesa de Disney eres?", 1);
+        MDB.insertarENCUESTA(2, "¿Que Youtuber eres?", 2);
+        MDB.insertarENCUESTA(3, "¿Le gustas a alguien en secreto?", 3);
+        MDB.insertarENCUESTA(4, "¿Que cantante seria tu mejor amigo?", 4);
+        MDB.insertarENCUESTA(5, "¿Que bebida eres?", 5);
+        MDB.insertarENCUESTA(6, "¿Que emocion eres?", 6);
+        MDB.insertarENCUESTA(7, "¿Cual es tu tipo de cuerpo?", 7);
+
         /////////////////////////////////////////////////////////////////////////////////////////////
         MDB.borrarPREGUNTAS();
         MDB.insertarPREGUNTA(1, "¿Dónde preferirías vivir?", 1);
         MDB.insertarPREGUNTA(2, "¿Cómo es tu personalidad?", 1);
-        MDB.insertarPREGUNTA(3, "¿Cual es tu mejor habilidad?", 1);
-        MDB.insertarPREGUNTA(4, "¿Que color usas mas al vestir?", 1);
-        MDB.insertarPREGUNTA(5, "¿Que mascota prefieres?", 1);
-        MDB.insertarPREGUNTA(6, "¿Como prefieres pasar tu tiempo libre?", 1);
-        MDB.insertarPREGUNTA(7, "¿Que lugar te gusta mas?", 1);
-        MDB.insertarPREGUNTA(8, "¿Cuál es tu estilo al vestir?", 2);
-        MDB.insertarPREGUNTA(9, "¿Cómo sería tu chica ideal?", 2);
-        MDB.insertarPREGUNTA(10, "¿Cuál es tu estilo al vestir?", 2);
-        MDB.insertarPREGUNTA(11, "¿Cuál es tu estilo al vestir?", 2);
-        MDB.insertarPREGUNTA(12, "¿Cuál es tu estilo al vestir?", 2);
-        MDB.insertarPREGUNTA(13, "¿Cuál es tu estilo al vestir?", 2);
-        MDB.insertarPREGUNTA(14, "¿Cuál es tu estilo al vestir?", 2);
+        MDB.insertarPREGUNTA(3, "¿Cuál es tu mejor habilidad?", 1);
+        MDB.insertarPREGUNTA(4, "¿Qué color usas mas al vestir?", 1);
+        MDB.insertarPREGUNTA(5, "¿Qué mascota prefieres?", 1);
+        MDB.insertarPREGUNTA(6, "¿Cémo prefieres pasar tu tiempo libre?", 1);
+        MDB.insertarPREGUNTA(7, "¿Qué lugar te gusta mas?", 1);
+
+        MDB.insertarPREGUNTA(8, "¿Cómo es tu personalidad?", 2);
+        MDB.insertarPREGUNTA(9, "¿Cuál es tu Hobbie?", 2);
+        MDB.insertarPREGUNTA(10, "¿Qué edad tienes?", 2);
+        MDB.insertarPREGUNTA(11, "Elige una pelicula.", 2);
+        MDB.insertarPREGUNTA(12, "¿Que tipo de videos te gusta ver?", 2);
+        MDB.insertarPREGUNTA(13, "¿Cuál es tu poder favorito?", 2);
+
+        MDB.insertarPREGUNTA(14, "¿Eres soltero(a)?", 3);
+        MDB.insertarPREGUNTA(15, "¿Alguien te mira mucho?", 3);
+        MDB.insertarPREGUNTA(16, "¿Se te dificulta expresar tus sentimientos?", 3);
+        MDB.insertarPREGUNTA(17, "¿Ese alguien te sonríe?", 3);
+
+        MDB.insertarPREGUNTA(18, "¿Cuál es tu estilo?", 4);
+        MDB.insertarPREGUNTA(19, "¿Cómo te describen tus amigos?", 4);
+        MDB.insertarPREGUNTA(20, "¿Cuál es tu festividad favorita?", 4);
+        MDB.insertarPREGUNTA(21, "¿Cómo tratas a los demás?", 4);
+
+        MDB.insertarPREGUNTA(22, "¿Cuál es tu color favorito?", 5);
+        MDB.insertarPREGUNTA(23, "Elíge una bebida.", 5);
+        MDB.insertarPREGUNTA(24, "¿Te gusta la caffeina?", 5);
+
+        MDB.insertarPREGUNTA(25, "¿Qué te gusta hacer en tu tiempo libre?", 6);
+        MDB.insertarPREGUNTA(26, "¿Qué es lo que más te asusta?", 6);
+        MDB.insertarPREGUNTA(27, "¿Qué tipo de película es tu favorita?", 6);
+        MDB.insertarPREGUNTA(28, "¿Cuál es tu emoción favorita?", 6);
+
+        MDB.insertarPREGUNTA(29, "¿Cómo son tus hombros?", 7);
+        MDB.insertarPREGUNTA(30, "Tu cuerpo tiende a", 7);
+        MDB.insertarPREGUNTA(31, "Comparado a los demás, ¿Cómo luces?", 7);
+        MDB.insertarPREGUNTA(32, "¿Cómo es tu metabolismo?", 7);
         /////////////////////////////////////////////////////////////////////////////////////////////
         MDB.borrarRESPUESTAS();
         MDB.insertarRESPUESTA(1, "Casa en la playa", 1);
@@ -181,12 +213,56 @@ public class MainActivity extends AppCompatActivity {
         MDB.insertarRESPUESTA(27, "Las Montañas", 7);
         MDB.insertarRESPUESTA(28, "El bosque", 7);
 
+        MDB.insertarRESPUESTA(29, "Feliz", 8);
+        MDB.insertarRESPUESTA(30, "Emocional", 8);
+        MDB.insertarRESPUESTA(31, "Timido", 8);
+        MDB.insertarRESPUESTA(32, "Malo", 8);
+
+        MDB.insertarRESPUESTA(33, "Leer", 9);
+        MDB.insertarRESPUESTA(34, "Youtube", 9);
+        MDB.insertarRESPUESTA(35, "Dibujar", 9);
+        MDB.insertarRESPUESTA(36, "Bailar", 9);
+
+        MDB.insertarRESPUESTA(37, "1-8", 10);
+        MDB.insertarRESPUESTA(38, "9-14", 10);
+        MDB.insertarRESPUESTA(39, "15-18", 10);
+        MDB.insertarRESPUESTA(40, "19-adelante", 10);
+
+        MDB.insertarRESPUESTA(41, "Mean Girls", 11);
+        MDB.insertarRESPUESTA(42, "Crepusculo", 11);
+        MDB.insertarRESPUESTA(43, "El Rey León", 11);
+        MDB.insertarRESPUESTA(16, "Harry Potter", 11);
+
+        MDB.insertarRESPUESTA(44, "Tutoriales", 12);
+        MDB.insertarRESPUESTA(45, "Hauls", 12);
+        MDB.insertarRESPUESTA(46, "Blogs", 12);
+        MDB.insertarRESPUESTA(47, "Videouegos", 12);
+
+        MDB.insertarRESPUESTA(48, "Volar", 13);
+        MDB.insertarRESPUESTA(49, "Leer Mentes", 13);
+        MDB.insertarRESPUESTA(50, "Teletransportación", 13);
+        MDB.insertarRESPUESTA(51, "Invisivilidad", 13);
+
+        MDB.insertarRESPUESTA(48, "Volar", 14);
+        MDB.insertarRESPUESTA(49, "Volar", 15);
+        MDB.insertarRESPUESTA(50, "Volar", 16);
+        MDB.insertarRESPUESTA(51, "Volar", 17);
+        MDB.insertarRESPUESTA(52, "Volar", 18);
+        MDB.insertarRESPUESTA(53, "Volar", 19);
+        MDB.insertarRESPUESTA(54, "Volar", 20);
+        MDB.insertarRESPUESTA(55, "Volar", 21);
+
         //////////////////////////////////////////////////////////////////////////////////////////////
         MDB.borrarRESULTADOS();
         MDB.insertarRESULTADO(1,"Ariel","Eres linda, agradable y con un gran talento.", 1, R.drawable.ariel);
         MDB.insertarRESULTADO(2,"Cenicienta","Eres trabajadora, amable y hermosa.", 1, R.drawable.cenicienta);
         MDB.insertarRESULTADO(3,"Bella","Eres inteligente, hermosa y culta.", 1, R.drawable.bellabestia);
         MDB.insertarRESULTADO(4,"Aurora","Eres curiosa, lista, dormilona y muy hermosa.", 1, R.drawable.aurora);
+
+        MDB.insertarRESULTADO(1,"Ariel","Eres linda, agradable y con un gran talento.", 2, R.drawable.ariel);
+        MDB.insertarRESULTADO(2,"Cenicienta","Eres trabajadora, amable y hermosa.", 2, R.drawable.cenicienta);
+        MDB.insertarRESULTADO(3,"Bella","Eres inteligente, hermosa y culta.", 2, R.drawable.bellabestia);
+        MDB.insertarRESULTADO(4,"Aurora","Eres curiosa, lista, dormilona y muy hermosa.", 2, R.drawable.aurora);
     }
 
 }
