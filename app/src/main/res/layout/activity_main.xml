@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textView"
-            android:layout_weight="0.32"
+            android:layout_weight="0.18"
             android:textAlignment="center"
             android:textStyle="normal|bold"
             android:textColor="#ffa000"
@@ -47,7 +47,8 @@
         android:gravity="center"
         android:layout_width="350dp"
         android:layout_gravity="center"
-        android:background="#ffff" />
+        android:background="#ffff"
+            android:layout_weight="0.30" />
 </LinearLayout>
 </RelativeLayout>
 
