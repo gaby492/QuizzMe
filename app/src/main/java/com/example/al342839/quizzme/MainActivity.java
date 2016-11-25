@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
         MDB.insertarENCUESTA(2, "¿Que Youtuber eres?", 2);
         MDB.insertarENCUESTA(3, "¿Le gustas a alguien en secreto?", 3);
         MDB.insertarENCUESTA(4, "¿Que cantante seria tu mejor amigo?", 4);
-        MDB.insertarENCUESTA(5, "¿Que bebida eres?", 5);
+        MDB.insertarENCUESTA(5, "¿Que bebida de Starbucks eres?", 5);
         MDB.insertarENCUESTA(6, "¿Que emocion eres?", 6);
         MDB.insertarENCUESTA(7, "¿Cual es tu tipo de cuerpo?", 7);
 
@@ -231,26 +231,114 @@ public class MainActivity extends AppCompatActivity {
         MDB.insertarRESPUESTA(41, "Mean Girls", 11);
         MDB.insertarRESPUESTA(42, "Crepusculo", 11);
         MDB.insertarRESPUESTA(43, "El Rey León", 11);
-        MDB.insertarRESPUESTA(16, "Harry Potter", 11);
+        MDB.insertarRESPUESTA(44, "Harry Potter", 11);
 
-        MDB.insertarRESPUESTA(44, "Tutoriales", 12);
-        MDB.insertarRESPUESTA(45, "Hauls", 12);
-        MDB.insertarRESPUESTA(46, "Blogs", 12);
-        MDB.insertarRESPUESTA(47, "Videouegos", 12);
+        MDB.insertarRESPUESTA(45, "Tutoriales", 12);
+        MDB.insertarRESPUESTA(46, "Hauls", 12);
+        MDB.insertarRESPUESTA(47, "Blogs", 12);
+        MDB.insertarRESPUESTA(48, "Videouegos", 12);
 
-        MDB.insertarRESPUESTA(48, "Volar", 13);
-        MDB.insertarRESPUESTA(49, "Leer Mentes", 13);
-        MDB.insertarRESPUESTA(50, "Teletransportación", 13);
-        MDB.insertarRESPUESTA(51, "Invisivilidad", 13);
+        MDB.insertarRESPUESTA(49, "Volar", 13);
+        MDB.insertarRESPUESTA(50, "Leer Mentes", 13);
+        MDB.insertarRESPUESTA(51, "Teletransportación", 13);
+        MDB.insertarRESPUESTA(52, "Invisivilidad", 13);
 
-        MDB.insertarRESPUESTA(48, "Volar", 14);
-        MDB.insertarRESPUESTA(49, "Volar", 15);
-        MDB.insertarRESPUESTA(50, "Volar", 16);
-        MDB.insertarRESPUESTA(51, "Volar", 17);
-        MDB.insertarRESPUESTA(52, "Volar", 18);
-        MDB.insertarRESPUESTA(53, "Volar", 19);
-        MDB.insertarRESPUESTA(54, "Volar", 20);
-        MDB.insertarRESPUESTA(55, "Volar", 21);
+        MDB.insertarRESPUESTA(53, "Si", 14);
+        MDB.insertarRESPUESTA(54, "No", 14);
+        MDB.insertarRESPUESTA(55, "Más o menos", 14);
+        MDB.insertarRESPUESTA(56, "Ya casi", 14);
+
+        MDB.insertarRESPUESTA(57, "Si", 15);
+        MDB.insertarRESPUESTA(58, "No", 15);
+        MDB.insertarRESPUESTA(59, "A veces", 15);
+        MDB.insertarRESPUESTA(60, "No lo sé", 15);
+
+        MDB.insertarRESPUESTA(61, "Si", 16);
+        MDB.insertarRESPUESTA(62, "No", 16);
+        MDB.insertarRESPUESTA(63, "A veces", 16);
+        MDB.insertarRESPUESTA(64, "No lo sé", 16);
+
+        MDB.insertarRESPUESTA(65, "Si", 17);
+        MDB.insertarRESPUESTA(66, "No", 17);
+        MDB.insertarRESPUESTA(67, "Todo el tiempo", 17);
+        MDB.insertarRESPUESTA(68, "A veces", 17);
+
+        MDB.insertarRESPUESTA(69, "Emo", 18);
+        MDB.insertarRESPUESTA(70, "Cómodo", 18);
+        MDB.insertarRESPUESTA(71, "Cute y Girly", 18);
+        MDB.insertarRESPUESTA(72, "Nerd", 18);
+
+        MDB.insertarRESPUESTA(73, "Listo", 19);
+        MDB.insertarRESPUESTA(74, "Loco", 19);
+        MDB.insertarRESPUESTA(75, "Aburrido", 19);
+        MDB.insertarRESPUESTA(76, "Divertido", 19);
+
+        MDB.insertarRESPUESTA(77, "Navidad", 20);
+        MDB.insertarRESPUESTA(78, "San Valentín", 20);
+        MDB.insertarRESPUESTA(79, "Halloween", 20);
+        MDB.insertarRESPUESTA(80, "Pascua", 20);
+
+        MDB.insertarRESPUESTA(81, "Amablemente", 21);
+        MDB.insertarRESPUESTA(82, "Rudo", 21);
+        MDB.insertarRESPUESTA(83, "Raro", 21);
+        MDB.insertarRESPUESTA(84, "Mal", 21);
+
+        MDB.insertarRESPUESTA(69, "Rosa", 22);
+        MDB.insertarRESPUESTA(70, "Negro", 22);
+        MDB.insertarRESPUESTA(71, "Azul", 22);
+        MDB.insertarRESPUESTA(72, "Amarillo", 22);
+
+        MDB.insertarRESPUESTA(73, "Té", 23);
+        MDB.insertarRESPUESTA(74, "Frappe", 23);
+        MDB.insertarRESPUESTA(75, "Café", 23);
+        MDB.insertarRESPUESTA(76, "Jugo", 23);
+
+        MDB.insertarRESPUESTA(77, "Si", 24);
+        MDB.insertarRESPUESTA(78, "No", 24);
+        MDB.insertarRESPUESTA(79, "Más o menos", 24);
+        MDB.insertarRESPUESTA(80, "Que asco", 24);
+
+        MDB.insertarRESPUESTA(69, "Salir con amigos", 25);
+        MDB.insertarRESPUESTA(70, "Comer", 25);
+        MDB.insertarRESPUESTA(71, "Estar solo", 25);
+        MDB.insertarRESPUESTA(72, "Bailar", 25);
+
+        MDB.insertarRESPUESTA(73, "TODO", 26);
+        MDB.insertarRESPUESTA(74, "Ser Feliz", 26);
+        MDB.insertarRESPUESTA(75, "NADA!", 26);
+        MDB.insertarRESPUESTA(76, "La comida, UGH", 26);
+
+        MDB.insertarRESPUESTA(77, "De Horror", 27);
+        MDB.insertarRESPUESTA(78, "De Romance", 27);
+        MDB.insertarRESPUESTA(79, "De Comedia", 27);
+        MDB.insertarRESPUESTA(80, "De Tristeza", 27);
+
+        MDB.insertarRESPUESTA(77, "Enojo", 28);
+        MDB.insertarRESPUESTA(78, "Alegria", 28);
+        MDB.insertarRESPUESTA(79, "Tristeza", 28);
+        MDB.insertarRESPUESTA(80, "Miedo", 28);
+
+        MDB.insertarRESPUESTA(69, "Anchos", 29);
+        MDB.insertarRESPUESTA(70, "Angostos", 29);
+        MDB.insertarRESPUESTA(71, "Normales", 29);
+        MDB.insertarRESPUESTA(72, "Caidos", 29);
+
+        MDB.insertarRESPUESTA(73, "Estar delgado", 30);
+        MDB.insertarRESPUESTA(74, "Tiene grasa extra", 30);
+        MDB.insertarRESPUESTA(75, "Estar musculoso", 30);
+        MDB.insertarRESPUESTA(76, "Estar aguado", 30);
+
+        MDB.insertarRESPUESTA(77, "Redonda", 31);
+        MDB.insertarRESPUESTA(78, "Alta", 31);
+        MDB.insertarRESPUESTA(79, "Delgada", 31);
+        MDB.insertarRESPUESTA(80, "Flaca", 31);
+
+        MDB.insertarRESPUESTA(77, "Engordo rápido", 32);
+        MDB.insertarRESPUESTA(78, "Pierdo peso rápido", 32);
+        MDB.insertarRESPUESTA(79, "Me mantengo delgada", 32);
+        MDB.insertarRESPUESTA(80, "Batallo para engordar", 32);
+
+
 
         //////////////////////////////////////////////////////////////////////////////////////////////
         MDB.borrarRESULTADOS();
@@ -259,10 +347,37 @@ public class MainActivity extends AppCompatActivity {
         MDB.insertarRESULTADO(3,"Bella","Eres inteligente, hermosa y culta.", 1, R.drawable.bellabestia);
         MDB.insertarRESULTADO(4,"Aurora","Eres curiosa, lista, dormilona y muy hermosa.", 1, R.drawable.aurora);
 
-        MDB.insertarRESULTADO(1,"Ariel","Eres linda, agradable y con un gran talento.", 2, R.drawable.ariel);
-        MDB.insertarRESULTADO(2,"Cenicienta","Eres trabajadora, amable y hermosa.", 2, R.drawable.cenicienta);
-        MDB.insertarRESULTADO(3,"Bella","Eres inteligente, hermosa y culta.", 2, R.drawable.bellabestia);
-        MDB.insertarRESULTADO(4,"Aurora","Eres curiosa, lista, dormilona y muy hermosa.", 2, R.drawable.aurora);
+        MDB.insertarRESULTADO(1,"Wismichu","Dicen que soy un troll pero yo solo busco reírme de la vida. Mi canal, mis normas. Espero divertirte con mis locuras.", 2, R.drawable.wismichu);
+        MDB.insertarRESULTADO(2,"Yuya","Hola guapuritas!! Siempre hay que sonreirle a la vida, les mando muchos besitos chiquitos chiquitos y muchas letritas de amor!!", 2, R.drawable.yuya);
+        MDB.insertarRESULTADO(3,"Rubius","PUES BIEN. Mi canal es de Gayplays de Minecr... Wait. No. Mi canal es de Gayplays en general, pero nunca juego a nada predefinido. Algun día os encontrareis con juegos de terror, otro con juegos divertidos, otro juegos indie, etc.", 2, R.drawable.rubius);
+        MDB.insertarRESULTADO(4,"Remlife","Me gusta subir tutoriales de maquillaje de asesoramiento de moda para proyectos de DIY! Youtube es mi gran pasión!", 2, R.drawable.remlife);
+
+        MDB.insertarRESULTADO(1,"Ariel","Eres linda, agradable y con un gran talento.", 3, R.drawable.ariel);
+        MDB.insertarRESULTADO(2,"Cenicienta","Eres trabajadora, amable y hermosa.", 3, R.drawable.cenicienta);
+        MDB.insertarRESULTADO(3,"Bella","Eres inteligente, hermosa y culta.", 3, R.drawable.bellabestia);
+        MDB.insertarRESULTADO(4,"Aurora","Eres curiosa, lista, dormilona y muy hermosa.", 3, R.drawable.aurora);
+
+        MDB.insertarRESULTADO(1,"Ariel","Eres linda, agradable y con un gran talento.", 4, R.drawable.ariel);
+        MDB.insertarRESULTADO(2,"Cenicienta","Eres trabajadora, amable y hermosa.", 4, R.drawable.cenicienta);
+        MDB.insertarRESULTADO(3,"Bella","Eres inteligente, hermosa y culta.", 4, R.drawable.bellabestia);
+        MDB.insertarRESULTADO(4,"Aurora","Eres curiosa, lista, dormilona y muy hermosa.", 4, R.drawable.aurora);
+
+        MDB.insertarRESULTADO(1,"Ariel","Eres linda, agradable y con un gran talento.", 5, R.drawable.ariel);
+        MDB.insertarRESULTADO(2,"Cenicienta","Eres trabajadora, amable y hermosa.", 5, R.drawable.cenicienta);
+        MDB.insertarRESULTADO(3,"Bella","Eres inteligente, hermosa y culta.", 5, R.drawable.bellabestia);
+        MDB.insertarRESULTADO(4,"Aurora","Eres curiosa, lista, dormilona y muy hermosa.", 5, R.drawable.aurora);
+
+        MDB.insertarRESULTADO(1,"Ariel","Eres linda, agradable y con un gran talento.", 6, R.drawable.ariel);
+        MDB.insertarRESULTADO(2,"Cenicienta","Eres trabajadora, amable y hermosa.", 6, R.drawable.cenicienta);
+        MDB.insertarRESULTADO(3,"Bella","Eres inteligente, hermosa y culta.", 6, R.drawable.bellabestia);
+        MDB.insertarRESULTADO(4,"Aurora","Eres curiosa, lista, dormilona y muy hermosa.", 6, R.drawable.aurora);
+
+        MDB.insertarRESULTADO(1,"Ariel","Eres linda, agradable y con un gran talento.", 7, R.drawable.ariel);
+        MDB.insertarRESULTADO(2,"Cenicienta","Eres trabajadora, amable y hermosa.", 7, R.drawable.cenicienta);
+        MDB.insertarRESULTADO(3,"Bella","Eres inteligente, hermosa y culta.", 7, R.drawable.bellabestia);
+        MDB.insertarRESULTADO(4,"Aurora","Eres curiosa, lista, dormilona y muy hermosa.", 7, R.drawable.aurora);
+
+
     }
 
 }
