@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.AdapterView;
@@ -116,6 +118,27 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_index, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
     private void ingresarDatosBD(MiBaseDeDatos MDB)
     {
         MDB.borrarCATEGORIAS();
@@ -128,13 +151,13 @@ public class MainActivity extends AppCompatActivity {
         MDB.insertarCATEGORIA(7,"Salud", R.drawable.salud);
         /////////////////////////////////////////////////////////////////////////////////////////////
         MDB.borrarENCUESTAS();
-        MDB.insertarENCUESTA(1, "¿Que Princesa de Disney eres?", 1);
-        MDB.insertarENCUESTA(2, "¿Que Youtuber eres?", 2);
+        MDB.insertarENCUESTA(1, "¿Qué Princesa de Disney eres?", 1);
+        MDB.insertarENCUESTA(2, "¿Qué Youtuber eres?", 2);
         MDB.insertarENCUESTA(3, "¿Le gustas a alguien en secreto?", 3);
-        MDB.insertarENCUESTA(4, "¿Que cantante seria tu mejor amigo?", 4);
-        MDB.insertarENCUESTA(5, "¿Que bebida de Starbucks eres?", 5);
-        MDB.insertarENCUESTA(6, "¿Que emocion eres?", 6);
-        MDB.insertarENCUESTA(7, "¿Cual es tu tipo de cuerpo?", 7);
+        MDB.insertarENCUESTA(4, "¿Qué cantante seria tu mejor amiga?", 4);
+        MDB.insertarENCUESTA(5, "¿Qué bebida de Starbucks eres?", 5);
+        MDB.insertarENCUESTA(6, "¿Qué emocion eres?", 6);
+        MDB.insertarENCUESTA(7, "¿Cuál es tu tipo de cuerpo?", 7);
 
         /////////////////////////////////////////////////////////////////////////////////////////////
         MDB.borrarPREGUNTAS();
@@ -143,14 +166,14 @@ public class MainActivity extends AppCompatActivity {
         MDB.insertarPREGUNTA(3, "¿Cuál es tu mejor habilidad?", 1);
         MDB.insertarPREGUNTA(4, "¿Qué color usas mas al vestir?", 1);
         MDB.insertarPREGUNTA(5, "¿Qué mascota prefieres?", 1);
-        MDB.insertarPREGUNTA(6, "¿Cémo prefieres pasar tu tiempo libre?", 1);
+        MDB.insertarPREGUNTA(6, "¿Cómo prefieres pasar tu tiempo libre?", 1);
         MDB.insertarPREGUNTA(7, "¿Qué lugar te gusta mas?", 1);
 
         MDB.insertarPREGUNTA(8, "¿Cómo es tu personalidad?", 2);
         MDB.insertarPREGUNTA(9, "¿Cuál es tu Hobbie?", 2);
         MDB.insertarPREGUNTA(10, "¿Qué edad tienes?", 2);
         MDB.insertarPREGUNTA(11, "Elige una pelicula.", 2);
-        MDB.insertarPREGUNTA(12, "¿Que tipo de videos te gusta ver?", 2);
+        MDB.insertarPREGUNTA(12, "¿Qué tipo de videos te gusta ver?", 2);
         MDB.insertarPREGUNTA(13, "¿Cuál es tu poder favorito?", 2);
 
         MDB.insertarPREGUNTA(14, "¿Eres soltero(a)?", 3);
@@ -349,18 +372,18 @@ public class MainActivity extends AppCompatActivity {
 
         MDB.insertarRESULTADO(1,"Wismichu","Dicen que soy un troll pero yo solo busco reírme de la vida. Mi canal, mis normas. Espero divertirte con mis locuras.", 2, R.drawable.wismichu);
         MDB.insertarRESULTADO(2,"Yuya","Hola guapuritas!! Siempre hay que sonreirle a la vida, les mando muchos besitos chiquitos chiquitos y muchas letritas de amor!!", 2, R.drawable.yuya);
-        MDB.insertarRESULTADO(3,"Rubius","PUES BIEN. Mi canal es de Gayplays de Minecr... Wait. No. Mi canal es de Gayplays en general, pero nunca juego a nada predefinido. Algun día os encontrareis con juegos de terror, otro con juegos divertidos, otro juegos indie, etc.", 2, R.drawable.rubius);
+        MDB.insertarRESULTADO(3,"Rubius","PUES BIEN. Mi canal es de Gayplays de Minecr... Wait. No. Mi canal es de Gayplays en general, pero nunca juego a nada predefinido.", 2, R.drawable.rubius);
         MDB.insertarRESULTADO(4,"Remlife","Me gusta subir tutoriales de maquillaje de asesoramiento de moda para proyectos de DIY! Youtube es mi gran pasión!", 2, R.drawable.remlife);
 
-        MDB.insertarRESULTADO(1,"Ariel","Eres linda, agradable y con un gran talento.", 3, R.drawable.ariel);
-        MDB.insertarRESULTADO(2,"Cenicienta","Eres trabajadora, amable y hermosa.", 3, R.drawable.cenicienta);
-        MDB.insertarRESULTADO(3,"Bella","Eres inteligente, hermosa y culta.", 3, R.drawable.bellabestia);
-        MDB.insertarRESULTADO(4,"Aurora","Eres curiosa, lista, dormilona y muy hermosa.", 3, R.drawable.aurora);
+        MDB.insertarRESULTADO(1,"Si, a tu vecino","Te espia sin que te des cuenta y te observa todo el tiempo. CUIDADO.", 3, R.drawable.vecino);
+        MDB.insertarRESULTADO(2,"Si, al chico que te gusta","Seguramente ya lo sabías, para que te haces -.-", 3, R.drawable.pareja);
+        MDB.insertarRESULTADO(3,"No, a nadie :(","Seguramente no falta mucho para que le gustes a alguien. Don't worry!", 3, R.drawable.alone);
+        MDB.insertarRESULTADO(4,"Talvez","Necesito más respuestas para estar seguro de que le gustes a alguien.", 3, R.drawable.talvez);
 
-        MDB.insertarRESULTADO(1,"Ariel","Eres linda, agradable y con un gran talento.", 4, R.drawable.ariel);
-        MDB.insertarRESULTADO(2,"Cenicienta","Eres trabajadora, amable y hermosa.", 4, R.drawable.cenicienta);
-        MDB.insertarRESULTADO(3,"Bella","Eres inteligente, hermosa y culta.", 4, R.drawable.bellabestia);
-        MDB.insertarRESULTADO(4,"Aurora","Eres curiosa, lista, dormilona y muy hermosa.", 4, R.drawable.aurora);
+        MDB.insertarRESULTADO(1,"Taylor Swift","Eres linda y muy enamoradisa, seguramente se caerían super bien!", 4, R.drawable.taylor);
+        MDB.insertarRESULTADO(2,"Selena Gómez","Te encanta la fiesta y la diversion, serían imparables juntas.", 4, R.drawable.selena);
+        MDB.insertarRESULTADO(3,"Ariana Grande","Eres una diva, lista y talentosa, seguramente tendrían alguna serie juntas.", 4, R.drawable.ariana);
+        MDB.insertarRESULTADO(4,"Sia","Eres misteriosa y caes en depresión con facilidad. Hasta se cortarían las venas juntas.", 4, R.drawable.sia);
 
         MDB.insertarRESULTADO(1,"Ariel","Eres linda, agradable y con un gran talento.", 5, R.drawable.ariel);
         MDB.insertarRESULTADO(2,"Cenicienta","Eres trabajadora, amable y hermosa.", 5, R.drawable.cenicienta);

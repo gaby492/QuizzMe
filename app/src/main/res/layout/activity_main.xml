@@ -27,19 +27,30 @@
         <TextView
             android:text="Clasificación"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/textView"
             android:layout_weight="0.18"
             android:textAlignment="center"
             android:textStyle="normal|bold"
             android:textColor="#ffa000"
             android:textSize="35sp"
-            android:background="#ffff" />
+            android:background="#ffff"
+            android:layout_height="50dp"
+            android:gravity="bottom" />
 
+
+        <TextView
+            android:text="Selecciona tu categoría de preguntas preferida!"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView4"
+            android:layout_weight="0.18"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15sp"
+            android:gravity="center_horizontal" />
 
         <GridView
         android:id="@+id/grid"
-        android:layout_height="430dp"
+        android:layout_height="429dp"
         android:columnWidth="120dp"
         android:horizontalSpacing="20dp"
         android:numColumns="auto_fit"
@@ -48,7 +59,7 @@
         android:layout_width="350dp"
         android:layout_gravity="center"
         android:background="#ffff"
-            android:layout_weight="0.30" />
+            android:layout_weight="0.27" />
 </LinearLayout>
 </RelativeLayout>
 
