@@ -11,9 +11,9 @@
         <activity
             android:name=".SplashScreen"
             android:screenOrientation="portrait">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -28,7 +28,8 @@
         </activity>
         <activity android:name=".ListaEncuestasActivity" />
         <activity android:name=".Test" />
-        <activity android:name=".ResultadoActivity"></activity>
+        <activity android:name=".ResultadoActivity" />
+        <activity android:name=".Acerca"> </activity>
     </application>
 
 </manifest>
