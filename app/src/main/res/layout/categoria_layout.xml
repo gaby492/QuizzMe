@@ -21,8 +21,7 @@
         <TextView
         android:id="@+id/nombre_categoria"
             android:layout_gravity="bottom"
-        android:background="@color/background_footer"
-        android:maxLines="1"
+            android:maxLines="1"
         android:padding="16dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
             android:textIsSelectable="false"

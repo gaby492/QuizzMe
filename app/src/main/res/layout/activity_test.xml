@@ -8,7 +8,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.al342839.quizzme.Test">
+    tools:context="com.example.al342839.quizzme.Test"
+    android:background="@drawable/fondo">
 
     <Button
         android:text="Button"
@@ -69,14 +70,14 @@
 
     <TextView
         android:text="TextView"
-        android:layout_height="100dp"
-        android:layout_marginTop="63dp"
         android:id="@+id/pregunta"
         android:layout_width="300dp"
-        android:textSize="30sp"
+        android:textSize="40sp"
         android:textAlignment="center"
         android:textStyle="normal|bold"
         android:textColor="@color/darkPrimaryColor"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_height="200dp"
+        android:layout_above="@+id/opt1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp" />
 </RelativeLayout>

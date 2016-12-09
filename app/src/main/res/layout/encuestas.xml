@@ -6,14 +6,15 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="80dp"
         android:text="New Text"
         android:id="@+id/textView2"
         android:textColor="@color/darkPrimaryColor"
         android:textStyle="bold"
-        android:background="#ffff"
-        android:textSize="25sp"
+        android:textSize="30sp"
         android:textAlignment="textStart"
-        android:layout_weight="0.11" />
+        android:layout_weight="0.11"
+        android:layout_height="100dp"
+        android:gravity="center_vertical"
+        android:elevation="11dp" />
 
 </LinearLayout>
