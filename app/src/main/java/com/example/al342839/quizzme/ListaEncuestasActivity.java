@@ -56,7 +56,6 @@ public class ListaEncuestasActivity extends AppCompatActivity {
                 Intent intent = new Intent(ListaEncuestasActivity.this, Test.class);
                 intent.putExtra("pregunta", v.getText() + "");
                 startActivity(intent);
-
             }
         });
 

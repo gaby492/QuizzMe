@@ -143,12 +143,13 @@ public class MainActivity extends AppCompatActivity {
     {
         MDB.borrarCATEGORIAS();
         MDB.insertarCATEGORIA(1,"Personajes", R.drawable.personaje);
-        MDB.insertarCATEGORIA(2,"YouTubers", R.drawable.youtubers);
+        MDB.insertarCATEGORIA(2,"YouTube", R.drawable.youtubers);
         MDB.insertarCATEGORIA(3,"Amor", R.drawable.love);
         MDB.insertarCATEGORIA(4,"Cantantes", R.drawable.cantantes);
         MDB.insertarCATEGORIA(5,"Comida", R.drawable.comida);
         MDB.insertarCATEGORIA(6,"Personalidad", R.drawable.personalidad);
         MDB.insertarCATEGORIA(7,"Salud", R.drawable.salud);
+
         /////////////////////////////////////////////////////////////////////////////////////////////
         MDB.borrarENCUESTAS();
         MDB.insertarENCUESTA(1, "¿Qué Princesa de Disney eres?", 1);
@@ -158,6 +159,10 @@ public class MainActivity extends AppCompatActivity {
         MDB.insertarENCUESTA(5, "¿Qué bebida de Starbucks eres?", 5);
         MDB.insertarENCUESTA(6, "¿Qué emocion eres?", 6);
         MDB.insertarENCUESTA(7, "¿Cuál es tu tipo de cuerpo?", 7);
+        MDB.insertarENCUESTA(8, "¿Cuál es tu deporte ideal?", 7);
+        MDB.insertarENCUESTA(9, "¿Qué canal de You Tube crearías?", 2);
+        MDB.insertarENCUESTA(10, "¿Qué villano eres?", 1);
+
 
         /////////////////////////////////////////////////////////////////////////////////////////////
         MDB.borrarPREGUNTAS();
@@ -199,6 +204,20 @@ public class MainActivity extends AppCompatActivity {
         MDB.insertarPREGUNTA(30, "Tu cuerpo tiende a", 7);
         MDB.insertarPREGUNTA(31, "Comparado a los demás, ¿Cómo luces?", 7);
         MDB.insertarPREGUNTA(32, "¿Cómo es tu metabolismo?", 7);
+
+        MDB.insertarPREGUNTA(33, "Te gusta hacer ejercicio en:", 8);
+        MDB.insertarPREGUNTA(34, "¿Qué te gusta más?",8);
+        MDB.insertarPREGUNTA(35, "¿Cuánto dura tu rutina de ejercicio?", 8);
+
+        MDB.insertarPREGUNTA(36, "¿Cuál es tu canal favorito?", 9);
+        MDB.insertarPREGUNTA(37, "¿Cuántas horas dedicas a YouTube?", 9);
+        MDB.insertarPREGUNTA(38, "¿A dónde te gustaría viajar?", 9);
+
+        MDB.insertarPREGUNTA(39, "¿Dónde pasas más tiempo?", 10);
+        MDB.insertarPREGUNTA(40, "¿Qué serie prefieres?", 10);
+
+
+
         /////////////////////////////////////////////////////////////////////////////////////////////
         MDB.borrarRESPUESTAS();
         MDB.insertarRESPUESTA(1, "Casa en la playa", 1);
@@ -361,6 +380,46 @@ public class MainActivity extends AppCompatActivity {
         MDB.insertarRESPUESTA(79, "Me mantengo delgada", 32);
         MDB.insertarRESPUESTA(80, "Batallo para engordar", 32);
 
+        MDB.insertarRESPUESTA(81, "El gimnasio", 33);
+        MDB.insertarRESPUESTA(82, "En el patio", 33);
+        MDB.insertarRESPUESTA(83, "En la playa", 33);
+        MDB.insertarRESPUESTA(84, "En el bosque", 33);
+
+        MDB.insertarRESPUESTA(85, "Caminar en el parque", 34);
+        MDB.insertarRESPUESTA(86, "Nadar en la playa", 34);
+        MDB.insertarRESPUESTA(87, "Pasear al perro", 34);
+        MDB.insertarRESPUESTA(88,  "Ir al gimnasio", 34);
+
+        MDB.insertarRESPUESTA(89, "10 minutos", 35);
+        MDB.insertarRESPUESTA(90, "15 minutos", 35);
+        MDB.insertarRESPUESTA(91, "20 minutos", 35);
+        MDB.insertarRESPUESTA(92, "30 minutos", 35);
+
+        MDB.insertarRESPUESTA(93, "Yuya", 36);
+        MDB.insertarRESPUESTA(94, "MarisolPink", 36 );
+        MDB.insertarRESPUESTA(95, "Zoella", 36);
+        MDB.insertarRESPUESTA(96, "PewDiePie", 36);
+
+        MDB.insertarRESPUESTA(97, "Media hora", 37);
+        MDB.insertarRESPUESTA(98, "1 hora", 37);
+        MDB.insertarRESPUESTA(99, "Más de 2 hrs", 37);
+        MDB.insertarRESPUESTA(100, "Todo el día", 37);
+
+        MDB.insertarRESPUESTA(101, "México", 38);
+        MDB.insertarRESPUESTA(102, "USA", 38);
+        MDB.insertarRESPUESTA(103, "Inglaterra", 38);
+        MDB.insertarRESPUESTA(104, "Japón", 38);
+
+        MDB.insertarRESPUESTA(105, "En la biblioteca", 39);
+        MDB.insertarRESPUESTA(106, "En tu cuarto", 39);
+        MDB.insertarRESPUESTA(107, "En el parque", 39);
+        MDB.insertarRESPUESTA(108, "En la playa", 39);
+
+        MDB.insertarRESPUESTA(109, "Scream Queens", 40);
+        MDB.insertarRESPUESTA(110, "Flash", 40);
+        MDB.insertarRESPUESTA(111, "Friends", 40);
+        MDB.insertarRESPUESTA(112, "Game of Thrones", 40);
+
 
 
         //////////////////////////////////////////////////////////////////////////////////////////////
@@ -385,22 +444,35 @@ public class MainActivity extends AppCompatActivity {
         MDB.insertarRESULTADO(3,"Ariana Grande","Eres una diva, lista y talentosa, seguramente tendrían alguna serie juntas.", 4, R.drawable.ariana);
         MDB.insertarRESULTADO(4,"Sia","Eres misteriosa y caes en depresión con facilidad. Hasta se cortarían las venas juntas.", 4, R.drawable.sia);
 
-        MDB.insertarRESULTADO(1,"Ariel","Eres linda, agradable y con un gran talento.", 5, R.drawable.ariel);
-        MDB.insertarRESULTADO(2,"Cenicienta","Eres trabajadora, amable y hermosa.", 5, R.drawable.cenicienta);
-        MDB.insertarRESULTADO(3,"Bella","Eres inteligente, hermosa y culta.", 5, R.drawable.bellabestia);
-        MDB.insertarRESULTADO(4,"Aurora","Eres curiosa, lista, dormilona y muy hermosa.", 5, R.drawable.aurora);
+        MDB.insertarRESULTADO(1,"Espresso Americano","Eres única y destacas por tu sencillez, tu persoanlidad lo es todo.", 5, R.drawable.espressoamericano);
+        MDB.insertarRESULTADO(2,"Green Tea Frappuccino","Sin duda te gusta trabajar duro para conseguir lo que quieres. No te gusta conformarte.", 5, R.drawable.greenteafrapp);
+        MDB.insertarRESULTADO(3,"Caramel Frappuccino","Eres simpática, divertida y te gusta jugar, pero necesitas empezar a concentrarte en tu futuro .", 5, R.drawable.caramelfrappuccino);
+        MDB.insertarRESULTADO(4,"Caramel Macciato","Te encuentras en una etapa donde existe balance en cada aspecto de tu vida. Sigue por ese camino y disfruta al máximo.", 5, R.drawable.caramelmacciato);
 
-        MDB.insertarRESULTADO(1,"Ariel","Eres linda, agradable y con un gran talento.", 6, R.drawable.ariel);
-        MDB.insertarRESULTADO(2,"Cenicienta","Eres trabajadora, amable y hermosa.", 6, R.drawable.cenicienta);
-        MDB.insertarRESULTADO(3,"Bella","Eres inteligente, hermosa y culta.", 6, R.drawable.bellabestia);
-        MDB.insertarRESULTADO(4,"Aurora","Eres curiosa, lista, dormilona y muy hermosa.", 6, R.drawable.aurora);
+        MDB.insertarRESULTADO(1,"Felicidad","Sabes valorar lo que tienes y encontrar la alegría en los pequeños detalles", 6, R.drawable.felicidad);
+        MDB.insertarRESULTADO(2,"Tristeza","Vives en el pasado y no te das cuenta del mundo maravilloso que te rodea. Sal a dar un paseo y refresca tu mente", 6, R.drawable.tristeza);
+        MDB.insertarRESULTADO(3,"Ira","Te dejas llevar por tus emociones fácilmente. Deja de discutir por todo!!!", 6, R.drawable.ira);
+        MDB.insertarRESULTADO(4,"Miedo","Te preocupas demasiado por todo y no estás dispuesta a conocer nada nuevo. Sal de tu zona de confort!!!.", 6, R.drawable.miedo);
 
-        MDB.insertarRESULTADO(1,"Ariel","Eres linda, agradable y con un gran talento.", 7, R.drawable.ariel);
-        MDB.insertarRESULTADO(2,"Cenicienta","Eres trabajadora, amable y hermosa.", 7, R.drawable.cenicienta);
-        MDB.insertarRESULTADO(3,"Bella","Eres inteligente, hermosa y culta.", 7, R.drawable.bellabestia);
-        MDB.insertarRESULTADO(4,"Aurora","Eres curiosa, lista, dormilona y muy hermosa.", 7, R.drawable.aurora);
+        MDB.insertarRESULTADO(1,"Cuerpo de diamante","Tu cuerpo tiende a acumular grasa fácilmente. Necesitas cuidar mucho tu alimentación e ir al gym", 7, R.drawable.diamante);
+        MDB.insertarRESULTADO(2,"Cuerpo recto","No tienes muchas curvas pero nunca tendrás que preocuparte por la obesidad LOL.", 7, R.drawable.cuerporecto);
+        MDB.insertarRESULTADO(3,"Cuerpo de pera","Tienes una cintura muy fina, pero  también almacenas un poco de grasa en tus piernas, por eso es fácil que bajes de peso, pero es difícil que llegues a tu peso ideal.", 7, R.drawable.cuerpopera);
+        MDB.insertarRESULTADO(4,"Cuerpo esbelto","Eres el balance perfecto entre las curvas y la delgadez. Tienes el cuerpo perfecto. Felicidades.", 7, R.drawable.cuerpoesbelto);
 
+        MDB.insertarRESULTADO(1,"Baloncesto","Eres muy inquieta y competitiva. Además sientes una gran pasión por el deporte", 8, R.drawable.baloncesto);
+        MDB.insertarRESULTADO(2,"Natación","Definitivamente te encantan los deportes demandantes y estar en contacto con el agua", 8, R.drawable.natacion);
+        MDB.insertarRESULTADO(3,"Tennis","Te encanta estar en movimiento. Amas los deporte y el glamour", 8, R.drawable.tennis);
+        MDB.insertarRESULTADO(4,"Rugby","Te encanta la adrenalina. No puedes estar quieta nni un segundo, definitivamente debes optar por un deporte rudo, argg", 8, R.drawable.rugby);
+
+        MDB.insertarRESULTADO(1,"DIY's", "Eres súper creativa. Tu imaginación no tiene límites", 9, R.drawable.diy);
+        MDB.insertarRESULTADO(2,"Cocina", "Te encanta pasar el día en la cocina. Eres feliz mientras tengas los ingredientes para hornear tus pasteles", 9, R.drawable.cocina);
+        MDB.insertarRESULTADO(3,"Moda", "Sientes una gran pasión por la moda y los colores. Siempre estás relucente, además eres súper responsable y comprometida en todo lo que te propones.", 9, R.drawable.fashion);
+        MDB.insertarRESULTADO(4,"Gameplays", "Eres indestructible cuando se trata de videojuegos!!, definitivamente el mundo necesita conocer tus estrategias!", 9, R.drawable.gameplays);
+
+        MDB.insertarRESULTADO(1,"Voldemort", "Siempre quieres ser el centro de atención. Tu grupo de amigos te valora mucho", 10, R.drawable.voldemort);
+        MDB.insertarRESULTADO(2,"Joker", "Eres original y talentosa. Qué bueno que los demás se dan cuenta y quieren estar contigo", 10, R.drawable.joker);
+        MDB.insertarRESULTADO(3,"Maléfica", "A veces dices comentarios sarcásticos y muy hirientes, CIELOS, deberías cuidar más lo que dices", 10, R.drawable.malefica);
+        MDB.insertarRESULTADO(4,"Cruella Deville", "Algunas veces no te das cuenta... pero puedes llegar a ser un poco mandona :(", 10, R.drawable.cruella);
 
     }
-
 }

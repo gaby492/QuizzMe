@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.method.ScrollingMovementMethod;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -24,6 +25,7 @@ public class ResultadoActivity extends AppCompatActivity {
         resultadoImageView = (ImageView) findViewById(R.id.resultadoImageView);
         encuestaTextView = (TextView) findViewById(R.id.encuestaTextView);
         resultadoTextView = (TextView) findViewById(R.id.resultadoTextView);
+        resultadoTextView.setMovementMethod(new ScrollingMovementMethod());
         Intent i = getIntent();
         int id_enc = Integer.parseInt(i.getStringExtra("id_enc"));
         int mayoria = Integer.parseInt(i.getStringExtra("mayoria")) + 1;
