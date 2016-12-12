@@ -1,5 +1,6 @@
 package com.example.al342839.quizzme;
 
+import android.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -17,7 +18,7 @@ public class Acerca extends AppCompatActivity {
         usarToolbar();
 
         imageView = (ImageView) findViewById(R.id.imageView);
-        acercaTextView = (TextView) findViewById(R.id.acercaTextView);
+        acercaTextView = (TextView) findViewById(R.id.acerca);
         imageView.setImageResource(R.drawable.creadoras);
 
     }

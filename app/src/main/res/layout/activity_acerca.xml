@@ -17,16 +17,17 @@
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <TextView
-        android:text="TextView"
-        android:layout_width="350dp"
+        android:text="@string/acercaDe"
         android:id="@+id/textView8"
-        android:layout_height="200dp"
-        android:layout_below="@+id/acercaTextView"
+        android:layout_below="@+id/acerca"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="13dp"
         android:textColor="?attr/colorControlNormal"
-        android:textSize="18sp"
-        android:textStyle="normal|bold" />
+        android:textSize="21sp"
+        android:textStyle="normal|bold"
+        android:layout_width="350dp"
+        android:layout_height="270dp"
+        android:textAlignment="textStart" />
 
     <TextView
         android:text="Creado por:"
@@ -41,17 +42,6 @@
         android:layout_alignTop="@+id/imageView"
         android:layout_alignStart="@+id/textView9" />
 
-    <TextView
-        android:text="Gabriela Domínguez G. y Anairene ishihara M."
-        android:id="@+id/textView9"
-        android:textAlignment="viewStart"
-        android:textSize="20sp"
-        android:textStyle="normal|bold"
-        android:layout_width="210dp"
-        android:layout_height="70dp"
-        android:layout_alignBottom="@+id/imageView"
-        android:layout_alignStart="@+id/textView8" />
-
     <ImageView
         app:srcCompat="@mipmap/ic_launcher"
         android:id="@+id/imageView"
@@ -64,7 +54,7 @@
     <TextView
         android:text="Acerca de QuizzMe"
         android:layout_marginTop="24dp"
-        android:id="@+id/acercaTextView"
+        android:id="@+id/acerca"
         android:layout_height="60dp"
         android:textSize="30sp"
         tools:text="Acerca de QuizzMe"
@@ -80,8 +70,19 @@
         android:id="@+id/imageView3"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_alignTop="@+id/acercaTextView"
+        android:layout_alignTop="@+id/acerca"
         android:layout_alignStart="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
+        android:textStyle="normal|bold"
+        android:layout_width="210dp"
+        android:layout_height="70dp"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_toStartOf="@+id/imageView"
+        android:text="Gabriela Domínguez G. y Anairene Ishihara M." />
 
 
 </RelativeLayout>

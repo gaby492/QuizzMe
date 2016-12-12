@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">QuizzMe</string>
+    <string name="acercaDe"> Lo que empezó como un pequeño proyecto escolar
+pronto se convirtió en una de las aplicaciones más descargadas a nivel mundial!\n
+QuizzMe está disponible en más de 90 países y la cifra sigue aumentando!
+No pierdas la oportunidad de tener horas de diversión respondiendo sencillos y divertidos quizzes!</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
