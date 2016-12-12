@@ -48,57 +48,6 @@ public class MainActivity extends AppCompatActivity {
             editor.putString("crearBD", "false");
             editor.commit();
         }
-        
-        int num = MDB.recuperarCATEGORIAS().size();
-
-        Log.d("TOTAL", Integer.toString(num));
-        int[] ids = new int[num];
-        String[] nombres = new String[num];
-        for (int i = 0; i < num; i++) {
-            ids[i] = MDB.recuperarCATEGORIAS().get(i).getId();
-            nombres[i] = MDB.recuperarCATEGORIAS().get(i).getNombre();
-            Log.i(""+ids[i], nombres[i]);
-        }
-
-
-        int num2 = MDB.recuperarENCUESTAS().size();
-        //textView.setText(num2);
-
-        Log.d("TOTAL", Integer.toString(num2));
-        int[] idsEnc = new int[num2];
-        String[]encuestas = new String[num2];
-        int[] idsCat = new int[num2];
-        for (int i = 0; i < num2; i++) {
-            idsEnc[i] = MDB.recuperarENCUESTAS().get(i).getId_enc();
-            encuestas[i] = MDB.recuperarENCUESTAS().get(i).getEncuesta();
-            idsCat[i] = MDB.recuperarENCUESTAS().get(i).getId_cat();
-            Log.i(""+idsEnc[i], encuestas[i]);
-            //textView.setText(encuestas[i]);
-        }
-
-        int num3 = MDB.recuperarPREGUNTAS().size();
-
-        Log.d("TOTAL", Integer.toString(num3));
-        int[] idsPre = new int[num3];
-        String[]preguntas = new String[num3];
-        for (int i = 0; i < num3; i++) {
-            idsPre[i] = MDB.recuperarPREGUNTAS().get(i).getId_pre();
-            preguntas[i] = MDB.recuperarPREGUNTAS().get(i).getPregunta();
-            Log.i(""+idsPre[i], preguntas[i]);
-
-        }
-
-        int num4 = MDB.recuperarRESPUESTAS().size();
-
-        Log.d("TOTAL", Integer.toString(num4));
-        int[] idsRes = new int[num4];
-        String[]respuestas = new String[num4];
-        for (int i = 0; i < num4; i++) {
-            idsRes[i] = MDB.recuperarRESPUESTAS().get(i).getId_res();
-            respuestas[i] = MDB.recuperarRESPUESTAS().get(i).getRespuesta();
-            Log.i(""+idsRes[i], respuestas[i]);
-
-        }
 
         gridView = (GridView) findViewById(R.id.grid);
         adaptador = new CategoriaAdapter(this);
@@ -141,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
     private void ingresarDatosBD(MiBaseDeDatos MDB)
     {
         MDB.borrarCATEGORIAS();
@@ -164,6 +114,14 @@ public class MainActivity extends AppCompatActivity {
         MDB.insertarENCUESTA(8, "¿Cuál es tu deporte ideal?", 7);
         MDB.insertarENCUESTA(9, "¿Qué canal de You Tube crearías?", 2);
         MDB.insertarENCUESTA(10, "¿Qué villano eres?", 1);
+
+        ////// Para notepad
+        MDB.insertarENCUESTA(11, "¿Cuál es tu chico ideal?", 3);
+        MDB.insertarENCUESTA(12, "¿Con qué actor te casarías?", 4 );
+        MDB.insertarENCUESTA(13, "¿Qué fruta define tu personalidad?", 5);
+        MDB.insertarENCUESTA(14, "¿Eres un buen líder?", 6);
+        MDB.insertarENCUESTA(15, "¿Qué superhéroe eres?", 1);
+        MDB.insertarENCUESTA(16, "¿A qué evento relacionado con YT irás?" , 2);
 
 
         /////////////////////////////////////////////////////////////////////////////////////////////
@@ -217,6 +175,30 @@ public class MainActivity extends AppCompatActivity {
 
         MDB.insertarPREGUNTA(39, "¿Dónde pasas más tiempo?", 10);
         MDB.insertarPREGUNTA(40, "¿Qué serie prefieres?", 10);
+
+        ///////// Para notepad
+        MDB.insertarPREGUNTA(41, "¿Cuál es tu color favorito?", 11);
+        MDB.insertarPREGUNTA(42, "¿En qué te fijas primero?", 11);
+        MDB.insertarPREGUNTA(43, "¿Cuál es tu novela favorita?", 11);
+
+        MDB.insertarPREGUNTA(44, "¿Cuál es tu estación favorita?", 12);
+        MDB.insertarPREGUNTA(45, "¿Cuál es tu serie favorita?", 12);
+        MDB.insertarPREGUNTA(46, "Tu materia favorita es...", 12 );
+
+        MDB.insertarPREGUNTA(47, "Tu color favorito es...", 13);
+        MDB.insertarPREGUNTA(48, "Tu sabor favorito es...", 13);
+        MDB.insertarPREGUNTA(49, "La compra de tus sueños es...", 13);
+
+        MDB.insertarPREGUNTA(50, "¿Cuántas amigas tienes?", 14);
+        MDB.insertarPREGUNTA(51, "¿Cuántas veces fuiste jefa de grupo?", 14);
+
+        MDB.insertarPREGUNTA(52, "Si pudieras tener un superpoder sería...", 15);
+        MDB.insertarPREGUNTA(53, "¿Cuál es tu color favorito?", 15);
+        MDB.insertarPREGUNTA(54, "Tu serie favorita es...", 15);
+
+        MDB.insertarPREGUNTA(55, "Mueres por visitar...", 16);
+        MDB.insertarPREGUNTA(56, "¿Qué género musical prefieres?", 16);
+        MDB.insertarPREGUNTA(57, "Marca de maquillaje favorita: ", 16);
 
 
 
@@ -422,6 +404,92 @@ public class MainActivity extends AppCompatActivity {
         MDB.insertarRESPUESTA(111, "Friends", 40);
         MDB.insertarRESPUESTA(112, "Game of Thrones", 40);
 
+        ///// Para notepad
+        MDB.insertarRESPUESTA(113, "Rojo", 41);
+        MDB.insertarRESPUESTA(114, "Azul", 41);
+        MDB.insertarRESPUESTA(115, "Verde", 41);
+        MDB.insertarRESPUESTA(116, "Rosa", 41);
+
+        MDB.insertarRESPUESTA(117, "Altura", 42);
+        MDB.insertarRESPUESTA(118, "IQ", 42);
+        MDB.insertarRESPUESTA(119, "Ojos", 42);
+        MDB.insertarRESPUESTA(120, "Outfit", 42);
+
+        MDB.insertarRESPUESTA(121, "Los miserables", 43);
+        MDB.insertarRESPUESTA(122, "Orgullo y prejuicio", 43);
+        MDB.insertarRESPUESTA(123, "Romeo y Julieta", 43);
+        MDB.insertarRESPUESTA(124, "Crepúsculo", 43);
+
+        MDB.insertarRESPUESTA(125, "Primavera", 44);
+        MDB.insertarRESPUESTA(126, "Verano", 44);
+        MDB.insertarRESPUESTA(127, "Otoño", 44);
+        MDB.insertarRESPUESTA(128, "Invierno", 44);
+
+        MDB.insertarRESPUESTA(129, "Smallville", 45);
+        MDB.insertarRESPUESTA(130, "Grey's Anathomy", 45);
+        MDB.insertarRESPUESTA(131, "The Big Bang Theory", 45);
+        MDB.insertarRESPUESTA(132, "ICarly", 45);
+
+        MDB.insertarRESPUESTA(133, "Español", 46);
+        MDB.insertarRESPUESTA(134, "Matemáticas", 46);
+        MDB.insertarRESPUESTA(135, "Química", 46);
+        MDB.insertarRESPUESTA(136, "Computación", 46);
+
+        MDB.insertarRESPUESTA(137, "Verde", 47);
+        MDB.insertarRESPUESTA(138, "Azul", 47);
+        MDB.insertarRESPUESTA(139, "Rojo", 47);
+        MDB.insertarRESPUESTA(140, "Anaranjado", 47);
+
+        MDB.insertarRESPUESTA(141, "Dulce", 48);
+        MDB.insertarRESPUESTA(142, "Salado", 48);
+        MDB.insertarRESPUESTA(143, "Picosito", 48);
+        MDB.insertarRESPUESTA(144, "Agridulce", 48);
+
+        MDB.insertarRESPUESTA(145, "Un reloj", 49);
+        MDB.insertarRESPUESTA(146, "Una casa", 49);
+        MDB.insertarRESPUESTA(147, "Un auto", 49);
+        MDB.insertarRESPUESTA(148, "La PS4", 49);
+
+        MDB.insertarRESPUESTA(149, "ninguna", 50);
+        MDB.insertarRESPUESTA(150, "1", 50);
+        MDB.insertarRESPUESTA(151, "2 ó 3", 50);
+        MDB.insertarRESPUESTA(152, "4 o más", 50);
+
+        MDB.insertarRESPUESTA(153, "ninguna", 51);
+        MDB.insertarRESPUESTA(154, "1 vez", 51);
+        MDB.insertarRESPUESTA(155, "2 veces", 51);
+        MDB.insertarRESPUESTA(156, "3 o más", 51);
+
+        MDB.insertarRESPUESTA(157, "Volar", 52);
+        MDB.insertarRESPUESTA(158, "Súper velocidad", 52);
+        MDB.insertarRESPUESTA(159, "Telepatía", 52);
+        MDB.insertarRESPUESTA(160, "Súper fuerza", 52);
+
+        MDB.insertarRESPUESTA(161, "Rojo", 53);
+        MDB.insertarRESPUESTA(162, "Azul", 53);
+        MDB.insertarRESPUESTA(163, "Verde", 53);
+        MDB.insertarRESPUESTA(164, "Negro", 53);
+
+        MDB.insertarRESPUESTA(165, "Scream Queens", 54);
+        MDB.insertarRESPUESTA(166, "Flash", 54);
+        MDB.insertarRESPUESTA(167, "The Big Bang Theory", 54);
+        MDB.insertarRESPUESTA(168, "Game of Thrones", 54);
+
+        MDB.insertarRESPUESTA(169, "Los Angeles", 55);
+        MDB.insertarRESPUESTA(170, "Londres", 55);
+        MDB.insertarRESPUESTA(171, "Nueva York", 55);
+        MDB.insertarRESPUESTA(172, "México", 55);
+
+        MDB.insertarRESPUESTA(173, "Rock", 56);
+        MDB.insertarRESPUESTA(174, "Dubstep", 56);
+        MDB.insertarRESPUESTA(175, "Pop", 56);
+        MDB.insertarRESPUESTA(176, "Ninguno", 56);
+
+        MDB.insertarRESPUESTA(177, "NYX", 57);
+        MDB.insertarRESPUESTA(178, "Too Faced", 57);
+        MDB.insertarRESPUESTA(179, "Ninguna", 57);
+        MDB.insertarRESPUESTA(180, "Maybelline", 57);
+
 
 
         //////////////////////////////////////////////////////////////////////////////////////////////
@@ -475,6 +543,37 @@ public class MainActivity extends AppCompatActivity {
         MDB.insertarRESULTADO(2,"Joker", "Eres original y talentosa. Qué bueno que los demás se dan cuenta y quieren estar contigo", 10, R.drawable.joker);
         MDB.insertarRESULTADO(3,"Maléfica", "A veces dices comentarios sarcásticos y muy hirientes, CIELOS, deberías cuidar más lo que dices", 10, R.drawable.malefica);
         MDB.insertarRESULTADO(4,"Cruella Deville", "Algunas veces no te das cuenta... pero puedes llegar a ser un poco mandona :(", 10, R.drawable.cruella);
+
+        ///////Para notepad
+        MDB.insertarRESULTADO(1,"Chico Tierno", "Sin duda te encantan los chicos con un buen físico y que además sean súper detallistas", 11, R.drawable.chicoalto);
+        MDB.insertarRESULTADO(2,"Chico Intelecual", "Tu chico ideal debe ser súper inteligente, como tú! Siempre tendrían tema de conversación y nunca se aburrirían! Genial!", 11, R.drawable.chicointelectual);
+        MDB.insertarRESULTADO(3,"Chico Romántico", "Eres súper fanática del romanticismo, por eso tu chico ideal debe pensar todos los días cómo conquistarte <3",11, R.drawable.chicoromantico);
+        MDB.insertarRESULTADO(4,"Chico Hipster", "Como salido de una cuenta de Tumblr! Tu chico ideal sería súper buena onda y siempre  vestiría súper moderno! ", 11, R.drawable.chicohipster);
+
+        MDB.insertarRESULTADO(1,"Josh Peck", "Eres un alma joven y fresca, sin duda quedarías perfecta con alguien que ama reír ", 12, R.drawable.josh);
+        MDB.insertarRESULTADO(2, "Ashton Kutcher", "Eres madura y conservadora. Tu lugar favorito es tu hogar. Sin duda harías una excelente pareja con Ashton", 12, R.drawable.ashton);
+        MDB.insertarRESULTADO(3,"Nat Wolff", " Te quedaste en la etapa de la High School. Tu vida es toda una aventura! Nat es para ti!", 12, R.drawable.nat);
+        MDB.insertarRESULTADO(4,"Jesse Eisenberg", "La tecnología es súper importante para ti, además eres súper jovial como Jesse. Se verían bien juntos", 12, R.drawable.jesse);
+
+        MDB.insertarRESULTADO(1,"Una pera", "Siempre luces radiante. Te encanta la naturaleza y estar en armonía con el mundo que te rodea", 13, R.drawable.pera);
+        MDB.insertarRESULTADO(2,"Una mora", "No cabe duda de que tienes altas y bajas, y eso se refleja en tu humor. Aunque siempre intentas dar la mejor versión de ti ", 13, R.drawable.mora);
+        MDB.insertarRESULTADO(3,"Una sandía", "Eres súper alegre y optimista. Siempre estás llena de buena vibra", 13, R.drawable.sandia);
+        MDB.insertarRESULTADO(4,"Naranja", "Eres simpática y energética. No le temes a nada y enfrentas cualquier obstáculo positivamente!!!", 13, R.drawable.naranja);
+
+        MDB.insertarRESULTADO(1,"0% Líder", "Desafortunadamente no tienes el don del liderazgo, pero no te preocupes, tienes muchas otras cualidades!!", 14, R.drawable.cerolider);
+        MDB.insertarRESULTADO(2,"Puedes mejorar", "Al parecer necesitas trabajar mucho más si quieres llegar a ser un buen líder!!!", 14, R.drawable.lider);
+        MDB.insertarRESULTADO(3,"Casi una Líder", "Estás a sólo un paso de poder decir que eres una líder. Vas por un buen camino!!", 14, R.drawable.casilider);
+        MDB.insertarRESULTADO(4,"Gran Líder", "Puedes sentirte afortunada de saber que a donde quiera que vayas sobresales por tu liderazgo", 14, R.drawable.granlider);
+
+        MDB.insertarRESULTADO(1,"Spiderman", "Te encanta andar libre por el mundo. NO tienes ninguna atadura!!", 15, R.drawable.spiderman);
+        MDB.insertarRESULTADO(2,"Flash", "Vives al límite y siempre te falta tiempo. Debes YOLEAR menos!!!", 15, R.drawable.flash);
+        MDB.insertarRESULTADO(3,"Linterna Verde", "Eres muy lista y siempre te gusta estar pendiente de los demás, a veces hasta quisieras leer sus mentes!", 15, R.drawable.linterna);
+        MDB.insertarRESULTADO(4,"Batman", "Tienes un estilo muy peculiar, puede decirse que eres bastante misteriosa. Además eres súper inteligente", 15, R.drawable.batman);
+
+        MDB.insertarRESULTADO(1,"ULTRA", "Disfrutas viajar con tus amigos mientras escuchas música súper fuerte!", 16, R.drawable.ultra);
+        MDB.insertarRESULTADO(2,"BeautyCon", "Sientes una gran pasión por el maquillaje y tuvida gira en torno a la belleza. Nos vemos en LA!!!", 16, R.drawable.beautycon);
+        MDB.insertarRESULTADO(3,"Tomorrowland", "Disfrutas los recorridos largos y las aventuras!! No importa dónde sea tu siempre encuentras la diversión!!!", 16, R.drawable.tomorrowland);
+        MDB.insertarRESULTADO(4,"Club Media Fest", " Tienes un gran interés por todo lo latino!! El Club Media Fest te estará esperando!!!!", 16, R.drawable.clubmediafest);
 
     }
 }

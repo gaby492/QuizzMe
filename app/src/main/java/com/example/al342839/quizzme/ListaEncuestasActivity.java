@@ -52,7 +52,7 @@ public class ListaEncuestasActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 TextView v = (TextView) view.findViewById(R.id.textView2);
 
-                Toast.makeText(getApplicationContext(), "Click en registro " +  v.getText(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "" +  v.getText(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(ListaEncuestasActivity.this, Test.class);
                 intent.putExtra("pregunta", v.getText() + "");
                 startActivity(intent);

@@ -33,7 +33,7 @@
             android:textAlignment="center"
             android:textStyle="normal|bold"
             android:textColor="#ffa000"
-            android:textSize="35sp"
+            android:textSize="45sp"
             android:layout_height="37dp" />
 
 
@@ -43,9 +43,10 @@
             android:layout_height="wrap_content"
             android:id="@+id/textView4"
             android:layout_weight="0.18"
-            android:textColor="@android:color/darker_gray"
+            android:textColor="?attr/colorControlNormal"
             android:textSize="17sp"
-            android:gravity="center_horizontal" />
+            android:gravity="center_horizontal"
+            android:textStyle="normal|bold" />
 
         <GridView
         android:id="@+id/grid"

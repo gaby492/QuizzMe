@@ -46,7 +46,6 @@ public class Test extends AppCompatActivity {
             public void onClick(View v) {
                 if(numPre < preguntas.size()){
                     conteo[0] = conteo[0] + 1;
-                    Log.i("conteo"+0,conteo[0]+"");
                     PreActual = preguntas.get(numPre);
                     setQuestionView();
                 }else{
@@ -64,7 +63,6 @@ public class Test extends AppCompatActivity {
             public void onClick(View v) {
                 if(numPre < preguntas.size()){
                     conteo[1] = conteo[1] + 1;
-                    Log.i("conteo"+1,conteo[1]+"");
                     PreActual = preguntas.get(numPre);
                     setQuestionView();
                 }else{
@@ -82,7 +80,6 @@ public class Test extends AppCompatActivity {
             public void onClick(View v) {
                 if(numPre < preguntas.size()){
                     conteo[2] = conteo[2] + 1;
-                    Log.i("conteo"+2,conteo[2]+"");
                     PreActual = preguntas.get(numPre);
                     setQuestionView();
                 }else{
@@ -100,7 +97,6 @@ public class Test extends AppCompatActivity {
             public void onClick(View v) {
                 if(numPre < preguntas.size()){
                     conteo[3] = conteo[3] + 1;
-                    Log.i("conteo"+3,conteo[3]+"");
                     PreActual = preguntas.get(numPre);
                     setQuestionView();
                 }else{
